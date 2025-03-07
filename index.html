@@ -11,8 +11,9 @@
             font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیر */
             margin: 0;
             padding: 0;
-            overflow: hidden; /* جلوگیری از اسکرول در هنگام لود */
-            height: 100vh; /* ارتفاع کامل صفحه */
+            display: flex;
+            flex-direction: column; /* چینش عمودی */
+            min-height: 100vh; /* حداقل ارتفاع 100vh */
             background-color: #f4f4f9; /* پس زمینه کل صفحه */
         }
 
@@ -47,12 +48,11 @@
         }
 
         .content {
-            display: none; /* مخفی کردن محتوا تا لود کامل */
+            flex: 1; /* اجازه می‌دهد که محتوا فضای باقی‌مانده را پر کند */
             text-align: center;
             padding: 20px;
             overflow-y: auto; /* اجازه اسکرول */
-            height: calc(100vh - 100px); /* ارتفاع محتوای صفحه */
-            padding-bottom: 40px; /* فضای پایین برای فوتر */
+            padding-bottom: 60px; /* فضای پایین برای فوتر */
             padding-top: 40px; /* فضای بالا برای ناوبار */
         }
 
@@ -97,11 +97,10 @@
             background-color: #3498db;
             color: white;
             text-align: center;
-            padding: 5px 0; /* کاهش پدینگ فوتر */
+            padding: 10px 0; /* افزایش پدینگ فوتر */
             width: 100%;
-            position: absolute; /* فوتر چسبان */
-            bottom: 0;
-            height: 40px; /* کاهش ارتفاع فوتر */
+            position: relative; /* فوتر نسبت به محتوای صفحه */
+            height: 60px; /* افزایش ارتفاع فوتر */
         }
     </style>
 </head>
