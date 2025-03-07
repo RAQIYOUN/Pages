@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایام نحس و سعد</title>
+    <meta name="description" content="ایام نحس و سعد و ممزوج ماه قمری">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* چیدمان عمودی */
+            min-height: 100vh; /* حداقل ارتفاع صفحه */
+            opacity: 0; /* مخفی کردن محتوا در ابتدا */
+            transition: opacity 1s; /* انیمیشن برای نمایش */
+        }
+
+        header {
+            background-color: #3498db; /* رنگ منوی شناور */
+            color: white; /* رنگ متن منوی شناور */
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            direction: rtl;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            flex-grow: 1; /* اجازه می‌دهد که محتوا فضای باقی‌مانده را بگیرد */
+            padding-top: 80px; /* فاصله برای منوی ثابت */
+            display: flex;
+            flex-direction: column; /* چیدمان عمودی */
+            align-items: center; /* مرکز کردن افقی */
+            text-align: right; /* راست چین کردن متن */
+            padding: 20px; /* فاصله داخلی */
+        }
+
+        .line-before-title {
+            width: 100%; /* عرض خط */
+            height: 2px; /* ارتفاع خط */
+            background-color: #ccc; /* رنگ خط */
+            margin-bottom: 20px; /* فاصله زیر خط */
+            margin-top: 40px; /* فاصله بالای خط (افزایش فاصله از منو) */
+        }
+
+        .title {
+            font-size: 24px; /* اندازه بزرگ برای عنوان */
+            color: #ff5733; /* رنگ خاص برای عنوان */
+            font-weight: bold; /* درشت کردن متن */
+            margin: 20px 0; /* فاصله بالا و پایین */
+            padding: 0 15px; /* فاصله از راست و چپ */
+        }
+
+        .arabic-text {
+            color: #3498db; /* رنگ متن عربی */
+            font-size: 20px; /* اندازه متن عربی */
+            margin: 10px 0; /* فاصله بالا و پایین */
+            text-align: center; /* مرکز کردن متن */
+        }
+
+        .persian-text {
+            color: #e74c3c; /* رنگ متن فارسی */
+            font-size: 18px; /* اندازه متن فارسی */
+            margin: 10px 0; /* فاصله بالا و پایین */
+            text-align: center; /* مرکز کردن متن */
+        }
+
+        footer {
+            background-color: #3498db; 
+            color: white; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* استایل برای ریسپانسیو */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 20px; /* اندازه کوچک‌تر برای عنوان در صفحه‌های کوچک */
+            }
+            .arabic-text, .persian-text {
+                font-size: 14px; /* اندازه کوچک‌تر برای متن‌ها */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ABJAD" target="_blank" style="color: white; text-decoration: none;">صفحه محاسبه ابجد</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/12MAH" target="_blank" style="color: white; text-decoration: none;">طالعنامه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ELLAT" target="_blank" style="color: white; text-decoration: none;">علت بیماری</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/JINN" target="_blank" style="color: white; text-decoration: none;">دفع جن</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ROQAYYA" target="_blank" style="color: white; text-decoration: none;">رقیه شرعیه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/SEHR" target="_blank" style="color: white; text-decoration: none;">دفع سحر</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/REZQ" target="_blank" style="color: white; text-decoration: none;">جلب رزق</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/AWLAD" target="_blank" style="color: white; text-decoration: none;">طلب فرزند</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            <span style="color: blue;"> 
+            سعد و نحس روز ها به حساب ماه قمری
+            </span>
+        </div>
+        <div class="line-before-title"></div>
+
+        <div class="persian-text">
+            دوستان روز های ممزوج یعنی روزی که سعد و نحس با هم است <br>
+            روز ممزوج گاهی بدترین نحس است<br>
+            باید با احتیاط به انجام امور خود بپردازید و بهتر<br>
+            است موقع بیرون شدن صدقه بدهید و ایت الکرسی و ناس و فلق 
+            را بخوانید و دعایی که در انتهای صفحه قرار داده شده 
+            <br>
+            در اخر صفحه دعایی که برای زمانی که شما در روز نحس اظطرار دارید و باید کاری را انجام دهید <br>
+        </div>
+        
+        <div class="line-before-title"></div>
+
+        <div class="arabic-text">
+            مكارم الاخلاق
+            الفصل السادس : في اختيارات الايام
+            <br>
+            عن الصادق عليه‌السلام 
+        </div>
+        <div class="persian-text">
+            در کتاب مکارم الاخلاق در باب اختیارات ایام
+            از امام صادق (علیه‌السلام) روایت شده است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            أول يوم من الشهر سعد يصلح للقاء الامراء وطلب الحوائج والشراء والبيع والزراعة والسفر
+        </div>
+        <div class="persian-text">
+            روز اول ماه سعد است و برای ملاقات با امرا، درخواست نیازها، خرید و فروش، کشاورزی و سفر مناسب است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثاني منه يصلح للسفر وطلب الحوائج
+        </div>
+        <div class="persian-text">
+            روز دوم برای سفر و درخواست نیازها مناسب است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثالث منه ردئ لا يصلح لشيء جملة
+        </div>
+        <div class="persian-text">
+            روز سوم بد است و برای هیچ‌چیز مناسب نیست
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الرابع منه صالح للتزويج ويكره السفر فيه
+        </div>
+        <div class="persian-text">
+            روز چهارم برای ازدواج مناسب است و سفر در آن مکروه است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الخامس منه ردئ نحس
+        </div>
+        <div class="persian-text">
+            روز پنجم بد و نحس است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            السادس منه مبارك يصلح للتزويج وطلب الحوائج
+        </div>
+        <div class="persian-text">
+            روز ششم مبارک است و برای ازدواج و درخواست نیازها مناسب است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            السابع منه مبارك مختار يصلح لكل ما يراد ويسعى فيه
+        </div>
+        <div class="persian-text">
+            روز هفتم مبارک و مختار است و برای هر چیزی که خواسته شود مناسب است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثامن منه يصلح لكل حاجة سوى السفر ، فإنه يكره فيه
+        </div>
+        <div class="persian-text">
+            روز هشتم برای هر نیازی به جز سفر مناسب است، زیرا سفر در آن مکروه است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            التاسع منه مبارك يصلح لكل ما يريده الانسان ، ومن سافر فيه رزق مالا ويرى في سفره كل خير
+        </div>
+        <div class="persian-text">
+            روز نهم مبارک است و برای هر چیزی که انسان می‌خواهد مناسب است، و کسی که در آن سفر کند، مال به دست می‌آورد و در سفرش همه خیر را می‌بیند
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            العاشر صالح لكل حاجة سوى الدخول على السلطان
+        </div>
+        <div class="persian-text">
+            روز دهم برای هر نیازی به جز ورود به نزد سلطان مناسب است
+        </div>
+        <div class="arabic-text">
+            ومن فر فيه من السلطان اخذ
+        </div>
+        <div class="persian-text">
+            کسی که در آن از سلطان فرار کند، گرفتار می‌شود
+        </div>
+        <div class="arabic-text">
+            ومن ضلت له ضالة وجدها
+        </div>
+        <div class="persian-text">
+            و اگر کسی گمشده‌ای داشته باشد، آن را پیدا می‌کند
+        </div>
+        <div class="arabic-text">
+            وهو جيد للشراء والبيع
+        </div>
+        <div class="persian-text">
+            همچنین برای خرید و فروش خوب است
+        </div>
+        <div class="arabic-text">
+            ومن مرض فيه برئ
+        </div>
+        <div class="persian-text">
+            و کسی که در آن بیمار باشد، شفا می‌یابد
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الحادي عشر يصلح للشراء والبيع ولجميع الحوائج وللسفر ما خلا الدخول على السلطان
+        </div>
+        <div class="persian-text">
+            روز یازدهم برای خرید و فروش و تمام نیازها و سفر مناسب است به جز ورود به نزد سلطان
+        </div>
+        <div class="arabic-text">
+            وإن التواري فيه يصلح
+        </div>
+        <div class="persian-text">
+            و پنهان شدن در آن مناسب است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثاني عشر يوم صالح مبارك ، فاطلبوا فيه حوائجكم واسعوا لها ، فإنها تقضى
+        </div>
+        <div class="persian-text">
+            روز دوازدهم روزی صالح و مبارک است، پس در آن درخواست نیازهایتان را بکنید و برای آنها تلاش کنید، زیرا برآورده می‌شود
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثالث عشر يوم نحس مستمر فاتقوا فيه جميع الاعمال
+        </div>
+        <div class="persian-text">
+            روز سیزدهم روزی نحس و مستمر است، پس از انجام همه کارها در آن پرهیز کنید
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الرابع عشر جيد للحوائج ولكل عمل
+        </div>
+        <div class="persian-text">
+            روز چهاردهم خوب است برای نیازها و هر کاری
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الخامس عشر صالح لكل حاجة تريدها ، فاطلبوا فيه حوائجكم ، فإنها تقضى
+        </div>
+        <div class="persian-text">
+            روز پانزدهم برای هر نیازی که می‌خواهید مناسب است، پس در آن درخواست نیازهایتان را بکنید، زیرا برآورده می‌شود
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            السادس عشر ردئ مذموم لكل شيء
+        </div>
+        <div class="persian-text">
+            روز شانزدهم بد و مذموم است برای هر چیزی
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            السابع عشر صالح مختار ، فاطلبوا فيه ما شئتم
+        </div>
+        <div class="persian-text">
+            روز هفدهم صالح و مختار است، پس در آن هر چه می‌خواهید درخواست کنید
+        </div>
+        <div class="arabic-text">
+            وتزوجوا وبيعوا واشتروا وازرعوا وابنوا وادخلوا على السلطان في حوائجكم فإنها تقضى
+        </div>
+        <div class="persian-text">
+            ازدواج کنید، خرید و فروش کنید، کشاورزی کنید، بسازید و در نیازهایتان به سلطان ورود کنید، زیرا برآورده می‌شود
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثامن عشر مختار صالح للسفر وطلب الحوائج
+        </div>
+        <div class="persian-text">
+            روز هجده مختار و صالح برای سفر و درخواست نیازهاست
+        </div>
+        <div class="arabic-text">
+            ومن خاصم فيه عدوه خصمه وغلبه وظفر به بقدرة الله
+        </div>
+        <div class="persian-text">
+            و اگر کسی در آن با دشمنش دعوا کند، بر او غلبه خواهد کرد به قدرت خدا
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            التاسع عشر مختار صالح لكل عمل ، ومن ولد فيه يكون مباركا
+        </div>
+        <div class="persian-text">
+            روز نوزدهم مختار و صالح برای هر کاری است، و کسی که در آن به دنیا بیاید مبارک خواهد بود
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            العشرون جيد مختار للحوائج والسفر والبناء والغرس والعرس والدخول على السلطان يوم مبارك بمشية الله
+        </div>
+        <div class="persian-text">
+            روز بیستم خوب و مختار برای نیازها، سفر، ساخت و ساز، کاشت، عروسی و ورود به نزد سلطان است و روزی مبارک به مشیت خداست
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الحادي والعشرون يوم نحس مستمر
+        </div>
+        <div class="persian-text">
+            روز بیست و یکم روزی نحس و مستمر است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثاني والعشرون مختار صالح للشراء والبيع ولقاء السلطان والسفر والصدقة
+        </div>
+        <div class="persian-text">
+            روز بیست و دوم مختار و صالح برای خرید و فروش، ملاقات با سلطان، سفر و صدقه است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثالث والعشرون مختار جيد خاصة للتزويج والتجارات كلها والدخول على السلطان
+        </div>
+        <div class="persian-text">
+            روز بیست و سوم مختار و خوب است به‌خصوص برای ازدواج، تمام تجارت‌ها و ورود به نزد سلطان
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الرابع والعشرون يوم نحس مشيءوم
+        </div>
+        <div class="persian-text">
+            روز بیست و چهارم روزی نحس و شوم است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الخامس والعشرون ردئ مذموم يحذر فيه من كل شيء
+        </div>
+        <div class="persian-text">
+            روز بیست و پنجم بد و مذموم است و از هر چیزی در آن باید پرهیز کرد
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            السادس والعشرون صالح لكل حاجة سوى التزويج والسفر
+        </div>
+        <div class="persian-text">
+            روز بیست و ششم برای هر نیازی به جز ازدواج و سفر مناسب است
+        </div>
+        <div class="arabic-text">
+            وعليكم بالصدقة فيه ، فإنكم تنتفعون به
+        </div>
+        <div class="persian-text">
+            و در آن صدقه بدهید، زیرا از آن بهره‌مند خواهید شد
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            السابع والعشرون جيد مختار للحوائج ولكل ما يراد ولقا السلطان
+        </div>
+        <div class="persian-text">
+            روز بیست و هفتم خوب و مختار است برای نیازها و هر آنچه خواسته شود و ملاقات با سلطان
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثامن والعشرون ممزوج
+        </div>
+        <div class="persian-text">
+            روز بیست و هشتم مختلط است
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            التاسع والعشرون مختار جيد لكل حاجة ما خلا الكاتب ، فإنه يكره له ذلك
+        </div>
+        <div class="persian-text">
+            روز بیست و نهم مختار و خوب است برای هر نیازی به جز نویسندگی، زیرا در آن مکروه است
+        </div>
+        <div class="arabic-text">
+            ولا أرى له أن يسعى في حاجة إن قدر على ذلك
+        </div>
+        <div class="persian-text">
+            و نمی‌بینم که کسی در نیازی تلاش کند اگر بتواند از آن پرهیز کند
+        </div>
+        <div class="arabic-text">
+            ومن مرض فيه برئ سريعا
+        </div>
+        <div class="persian-text">
+            و کسی که در آن بیمار شود، به سرعت شفا می‌یابد
+        </div>
+        <div class="arabic-text">
+            ومن سافر فيه أصاب مالا كثيرا
+        </div>
+        <div class="persian-text">
+            و کسی که در آن سفر کند، مال زیادی به دست می‌آورد
+        </div>
+        <div class="arabic-text">
+            ومن أبق فيه رجع
+        </div>
+        <div class="persian-text">
+            و کسی که در آن فرار کند، به خانه‌اش باز می‌گردد
+        </div>
+        <div class="line-before-title"></div>
+        <div class="arabic-text">
+            الثلاثون مختار جيد لكل شيء ولكل حاجة من شراء وبيع وزرع وتزويج
+        </div>
+        <div class="persian-text">
+            روز سی‌ام مختار و خوب است برای هر چیزی و هر نیازی از خرید و فروش، کشاورزی و ازدواج
+        </div>
+        <div class="arabic-text">
+            ومن مرض فيه برئ سريعا
+        </div>
+        <div class="persian-text">
+            و کسی که در آن بیمار شود، به سرعت شفا می‌یابد
+        </div>
+        <div class="arabic-text">
+            ومن ولد فيه يكون حليما مباركا ويرتفع أمره ويكون صادق اللسان صاحب وفاء
+        </div>
+        <div class="persian-text">
+            و کسی که در آن به دنیا بیاید، انسان باحلم و مبارکی خواهد بود و مقامش بالا می‌رود و زبانش راستگو و وفادار خواهد بود
+        </div>
+        <div class="line-before-title"></div>
+        <div class="persian-text">این دعا در موقع مجبوری و اظطرار خوانده شود
+            <br>
+            بجای کذا حاجت خود را برای رفع نحسی روز بیان کنید
+        </div>
+        <div class="arabic-text">
+            لا حول ولا قوة إلا بالله افرج بها كل كربة ،<br>
+            لا حول ولا قوة إلا بالله أحل بها كل عقدة.<br>
+            لا حول ولا قوة إلا بالله أجلو بها كل ظلمة.<br>
+            لا حول ولا قوة إلا بالله أفتح بها كل باب.<br>
+            لا حول ولا قوة إلا بالله أستعين بها على كل شدة ومصيبة.<br>
+            لا حول ولا قوة إلا بالله أستعين بها على كل أمر ينزل بي.<br>
+            لا حول ولا قوة إلا بالله أعتصم بها من كل محذور أحاذره.<br>
+            لا حول ولا قوة إلا بالله أستوجب بها العفو والعافية والرضا من الله.<br>
+            لا حول ولا قوة إلا بالله تفرق أعداء الله وغلبت حجة الله وبقي وجه الله.<br>
+            لا حول ولا قوة إلا بالله ،<br>
+            اللهم رب الارواح الفانية ورب الاجساد البالية ورب الشعور المتمعطة <br>
+            ورب الجلود الممزقة ورب العظام النخرة ورب الساعة القائمة أسألك <br>
+            يا رب أن تصلي على محمد وأهل بيته الطاهرين <br>
+            وافعل بي 
+            <span style="color: blue;">كذا</span>
+            بخفي لطفك يا ذا الجلال والاكرام آمين آمين يا رب العالمين.<br>
+        </div>
+    </main>
+
+    <footer>
+        <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        // انیمیشن بارگذاری
+        window.onload = function() {
+            document.body.style.opacity = 1; // نمایش محتوا بعد از بارگذاری
+        };
+    </script>
+</body>
+</html>
