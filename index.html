@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راقیون علوم و فنون رحمانی</title>
+    <meta name="description" content="درمان با آیات قرآن و احادیث معصومین">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet"> <!-- اضافه کردن فونت وزیر -->
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیر */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* جلوگیری از اسکرول در هنگام لود */
+            height: 100vh; /* ارتفاع کامل صفحه */
+            background-color: #f4f4f9; /* پس زمینه کل صفحه */
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 2s ease; /* انیمیشن آهسته */
+        }
+
+        .loader::after {
+            content: '';
+            border: 8px solid white;
+            border-top: 8px solid transparent;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content {
+            display: none; /* مخفی کردن محتوا تا لود کامل */
+            text-align: center;
+            padding: 20px;
+            overflow-y: auto; /* اجازه اسکرول */
+            height: calc(100vh - 100px); /* ارتفاع محتوای صفحه */
+            padding-bottom: 40px; /* فضای پایین برای فوتر */
+            padding-top: 40px; /* فضای بالا برای ناوبار */
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .links a {
+            margin: 10px 0;
+            text-decoration: none;
+            color: #3498db;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid #3498db; /* کادر دور لینک‌ها */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s; /* اضافه کردن انیمیشن تغییر رنگ */
+            width: 250px; /* عرض ثابت برای تمام لینک‌ها */
+            background-color: #e0e0e0; /* رنگ پس‌زمینه لینک‌ها */
+        }
+
+        .links a:hover {
+            background-color: #2ecc71; /* رنگ جدید پس‌زمینه هاور */
+            color: white; /* تغییر رنگ متن در هاور */
+        }
+
+        .navbar {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 5px 0; /* کاهش پدینگ ناوبار */
+            position: fixed; /* ناوبار ثابت */
+            width: 100%; /* عرض کامل */
+            top: 0; /* در بالای صفحه */
+            z-index: 1; /* قرار دادن ناوبار در بالای محتوا */
+            height: 40px; /* کاهش ارتفاع ناوبار */
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 5px 0; /* کاهش پدینگ فوتر */
+            width: 100%;
+            position: absolute; /* فوتر چسبان */
+            bottom: 0;
+            height: 40px; /* کاهش ارتفاع فوتر */
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="navbar">
+        <p><a href="https://t.me/raqiyoun" target="_blank" style="color: white; text-decoration: underline;">کانال تلگرام راقییون</a></p>
+    </div>
+    <div class="content">
+        <h1>راقیون علوم و فنون رحمانی</h1>
+        <div class="links">
+            <a href="https://raqiyoun.github.io/Pages/ABJAD" target="_blank">محاسبه ابجد</a>
+            <a href="https://raqiyoun.github.io/Pages/SAADNAHS" target="_blank">ایام سعد و نحس</a>
+            <a href="https://raqiyoun.github.io/Pages/12MAH" target="_blank">طالعنامه</a>
+            <a href="https://raqiyoun.github.io/Pages/JINN" target="_blank">دفع جن</a>
+            <a href="https://raqiyoun.github.io/Pages/SEHR" target="_blank">دفع سحر</a>
+            <a href="https://raqiyoun.github.io/Pages/ROQAYYA" target="_blank">رقیه شرعیه</a>
+            <a href="https://raqiyoun.github.io/Pages/REZQ" target="_blank">جلب رزق</a>
+            <a href="https://raqiyoun.github.io/Pages/AWLAD" target="_blank">طلب فرزند</a>
+            <a href="https://raqiyoun.github.io/Pages/ELLAT" target="_blank">علت بیماری</a>
+            <a href="https://raqiyoun.github.io/Pages/DARD" target="_blank">دفع دردها</a>
+        </div>
+    </div>
+    <footer>
+        <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
+    </footer>
+    <script>
+        window.onload = function() {
+            const loader = document.querySelector('.loader');
+            const content = document.querySelector('.content');
+            
+            // مخفی کردن لودر و نمایش محتوا
+            setTimeout(() => {
+                loader.style.opacity = '0'; // کاهش شفافیت
+                setTimeout(() => {
+                    loader.style.display = 'none'; // مخفی کردن لودر
+                    content.style.display = 'block'; // نمایش محتوا
+                }, 2000); // زمان انیمیشن
+            }, 1000); // زمان تاخیر قبل از شروع انیمیشن
+        };
+    </script>
+</body>
+</html>
