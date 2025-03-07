@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دفع دردها</title>
+	<meta name="description" content="درد پا . در کمر . درد زانو . درد دندان . در سر . درد کتف . درد شکم . درد گوش . درد چشم">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #f4f4f9;
+            color: #333; /* رنگ متن پایه */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 1s;
+            text-align: center; /* متن مرکز */
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            direction: rtl;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding-top: 80px; /* فاصله برای منوی ثابت */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* وسط‌چین عمودی */
+            padding: 20px;
+            text-align: center; /* وسط‌چین افقی */
+        }
+
+        .line-before-title {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #ff5733; /* رنگ عنوان */
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 0 15px;
+        }
+
+        .hadith, .persian-text {
+            color: #4a90e2; /* رنگ متن حدیث */
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        .arabic-text {
+            color: #28a745; /* رنگ سبز خوانا برای متن عربی */
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        .reference {
+            color: #333; /* رنگ مشکی برای مرجع */
+            font-style: italic;
+            margin-top: 20px; /* فاصله بالای مرجع */
+        }
+
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* استایل برای ریسپانسیو */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 20px;
+            }
+            .hadith, .arabic-text, .reference, .persian-text {
+                font-size: 14px;
+            }
+        }
+
+        /* انیمیشن لود */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader div {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #3498db;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div></div>
+    </div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ABJAD" target="_blank" style="color: white; text-decoration: none;">صفحه محاسبه ابجد</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/12MAH" target="_blank" style="color: white; text-decoration: none;">طالعنامه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ELLAT" target="_blank" style="color: white; text-decoration: none;">علت بیماری</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/JINN" target="_blank" style="color: white; text-decoration: none;">دفع جن</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ROQAYYA" target="_blank" style="color: white; text-decoration: none;">رقیه شرعیه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/SEHR" target="_blank" style="color: white; text-decoration: none;">دفع سحر</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/AWLAD" target="_blank" style="color: white; text-decoration: none;">طلب فرزند</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/SAADNAHS" target="_blank" style="color: white; text-decoration: none;">ایام سعد و نحش</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="line-before-title"></div>
+        <div class="title">درد زانو</div>
+        
+        <div class="persian-text">
+            “احمد بن محمد از العوفی، از علی بن حسین، از محمد بن عبد الله بن زُراره، از محمد بن الفضیل، از ابی حمزه نقل می‌کند که <br>
+            گفت: درد در زانوی من ظاهر شد و من این موضوع را به ابی جعفر (علیه‌السلام) شکایت کردم. <br>
+            او گفت: وقتی که نماز خواندی، بگو:
+            <div class="title">
+                يَا أَجْوَدَ مَنْ أَعْطَى وَ يَا خَيْرَ مَنْ سُئِلَ <br>
+                وَ يَا أَرْحَمَ مَنِ اسْتُرْحِمَ ارْحَمْ ضَعْفِي وَ قِلَّةَ حِيلَتِي وَ عَافِنِي مِنْ وَجَعِي<br>
+            </div>
+        </div>
+        
+        <div class="arabic-text">
+            أَحْمَدُ بْنُ مُحَمَّدٍ عَنِ الْعَوْفِيِّ عَنْ عَلِيِّ بْنِ الْحُسَيْنِ عَنْ مُحَمَّدِ بْنِ عَبْدِ اللَّهِ بْنِ زُرَارَةَ عَنْ مُحَمَّدِ بْنِ الْفُضَيْلِ عَنْ أَبِي حَمْزَةَ <br>
+            قَالَ: عَرَضَ بِي وَجَعٌ فِي رُكْبَتِي فَشَكَوْتُ ذَلِكَ إِلَى أَبِي جَعْفَرٍ ع <br>
+            فَقَالَ إِذَا أَنْتَ صَلَّيْتَ فَقُلْ- يَا أَجْوَدَ مَنْ أَعْطَى وَ يَا خَيْرَ مَنْ سُئِلَ <br>
+            وَ يَا أَرْحَمَ مَنِ اسْتُرْحِمَ ارْحَمْ ضَعْفِي وَ قِلَّةَ حِيلَتِي وَ عَافِنِي مِنْ وَجَعِي قَالَ فَفَعَلْتُهُ فَعُوفِیتُ.	<br>	
+        </div>
+        
+        <div class="reference">
+            منبع: <span>الكافي- الشيخ الكلینی    جلد : 2  صفحه : 568</span>
+        </div>
+
+        <div class="line"></div>
+        
+        <div class="title">درد کمر</div>
+        
+        <div class="persian-text">
+            الخضر بن محمد، از الخرازینی، از فضاله، از ابان بن عثمان، از ثمالی، از ابی جعفر محمد باقر (علیه‌السلام) نقل می‌کند<br>
+            که: مردی از همدان به امیر مؤمنان (علیه‌السلام) شکایت کرد که از درد کمر رنج می‌برد و شب‌ها نمی‌تواند بخوابد. <br>
+            ایشان فرمودند: دست خود را بر جایی که شکایت داری بگذار و 
+            سه بار این آیه را بخوان: <br>
+            <div class="title">
+                «و ما کان لنفس أن تموت إلا بإذن الله کتابا مؤجلا، و من یرد ثواب الدنیا نؤته منها و من یرد ثواب الآخرة نؤته منها و سنجزی الشاکرین»
+            </div><br>
+            و همچنین هفت بار 
+            <div class="title">
+                «إنا أنزلناه فی لیلة القدر» را تا انتها بخوان
+            </div><br>
+            ان‌شاءالله از بیماری‌ها شفا پیدا خواهی کرد
+        </div>
+        
+        <div class="arabic-text">
+            الخضر بن محمد ، عن الخرازيني ، عن فضالة ، عن أبان بن عثمان ، عن الثمالى ، عن أبي جعفر محمد الباقر <br>
+            قال : شكى رجل من همدان إلى أمير المؤمنين  وجع الظهر وأنه يسهر الليل ، 
+            فقال : ضع يدك على الموضع الذي تشتكي منه واقرأ ثلاثا <br>
+                « وما كان لنفس أن تموت إلا بإذن الله كتابا مؤجلا ، ومن يرد ثواب الدنيا نؤته منها ومن يرد ثواب الاخرة نؤته منها وسنجزی الشاكرین » 
+            واقرء سبع مرات 
+                إنا أنزلناه في ليلة القدر 
+            فانك تعافى من العلل إنشاءالله تعالى
+        </div>
+        
+        <div class="reference">
+            منبع: <span> بحار الأنوار - ط مؤسسةالوفاء : العلامة المجلسی    جلد : 95  صفحه : 68</span>
+        </div>
+
+        <div class="line"></div>
+		        <div class="title">درد قوزک پا</div>
+        
+        <div class="persian-text">
+عبدالله بن بسطام، از ابراهیم بن محمد اودی، از صفوان جمال، از جعفر بن محمد، از پدرش، از علی بن حسین (علیه‌السلام) روایت می‌کند <br>
+که مردی به ابی عبدالله حسین بن علی (علیه‌السلام) شکایت کرد و گفت: <br>
+
+ای پسر رسول الله، من از درد در قوزک‌های پا رنج می‌برم که مانع من از نماز خواندن می‌شود. <br>ایشان فرمودند: چرا از عوذه استفاده نمیکنی ؟ 
+<br>
+مرد گفت: من آن را نمی‌دانم. <br>
+
+ایشان فرمودند: هنگامی که آن را احساس کردی، دستت را بر آن بگذار و بگو:
+<div class="title">
+ «بسم الله وبالله والسلام على رسول الله»
+</div><br>
+ سپس بر آن آیه را بخوان: 
+<div class="title"><br>
+«و ما قدروا الله حق قدره والارض جميعا قبضته يوم القيامة، والسموات مطویة بيمينه سبحانه وتعالى عما يشركون»
+</div><br>
+مرد این کار را انجام داد و خداوند او را شفا داد.
+        </div>
+        
+        <div class="arabic-text">
+عبدالله بن بسطام ، عن إبراهيم بن محمد الاودي ، عن صفوان الجمال ، عن جعفر بن محمد ، عن أبيه ، عن علي ابن الحسين أن رجلا اشتكى إلى أبي عبدالله الحسين بن علي <br>
+فقال : يا ابن رسول الله إني أجد وجعا في عراقيبي قد منعني من النهوض إلى الغرف قال : فما يمنعك من العوذة؟ قال : لست أعلمها ، <br>
+قال : فإذا أحسست بها فضع يدك عليها وقل : <br>
+« بسم الله وبالله والسلام على رسول الله  » ثم أقرا عليه « وما قدروا الله حق قدره والارض جميعا قبضته يوم القيامة ، والسموات مطويات بيمينه سبحانه وتعالى عما يشركون » 
+<br>
+ففعل الرجل ذلك فشفاه الله تعالى
+        </div>
+        
+        <div class="reference">
+            منبع: <span> بحار الأنوار - ط مؤسسةالوفاء : العلامة المجلسي    جلد : 95  صفحه : 85</span>
+        </div>
+
+        <div class="line"></div>
+				        <div class="title">در پا</div>
+        
+        <div class="persian-text">
+حنان بن جابر از محمد بن علی صیرفی، از حسین بن اشقر، از عمرو بن ابی المقدام، از جابر جعفی، از محمد باقر (علیه‌السلام) نقل می‌کند که: <br>
+من نزد حسین بن علی (علیه‌السلام) بودم که مردی از بنی امیه، از شیعیان ما،<br> به ایشان گفت: 
+ای پسر رسول الله، من نتوانستم به خاطر درد پایم به سوی تو بیایم. <br>ایشان فرمودند: 
+چرا از عوذه حسن ابن علی استفاده نمیکنی ؟
+<br> مرد گفت: 
+ای پسر رسول الله، آن چیست؟ <br>
+ایشان فرمودند: 
+<div class="title">
+«إنا فتحنا لك فتحا مبینا، لیغفر لك الله» تا آیه  «و کان الله عزیزا حکیما». 
+</div><br>
+مرد گفت: من آنچه را که به من فرمودند انجام دادم و پس از آن هیچ دردی را احساس نکردم به یاری خداوند
+        </div>
+        
+        <div class="arabic-text">
+حنان بن جابر ، عن محمد بن على الصيرفي ، عن الحسين بن الاشقر عن عمرو بن أبي المقدام ، عن جابر الجعفي ، عن محمد الباقر <br>
+ قال : كنت عند الحسين بن علي  إذ أتاه رجل من بني امية ، من شيعتنا فقال له :
+ يا ابن رسول الله ما قدرت أن أمشي إليك من وجع رجلي ، <br>
+قال : فأين أنت من عوذة الحسن ابن على؟ <br>
+قال : يا ابن رسول الله وما ذاك؟ قال <br>
+« إنا فتحنا لك فتحا مبينا ، ليغفرلك الله ـ إلى قوله ـ وكان الله عزيزا حكيما » <br>
+قال : ففعلت ما أمرني به فما أحسست بعد ذلك بشئ منها بعون الله تعالى
+        </div>
+        
+        <div class="reference">
+            منبع: <span> بحار الأنوار - ط مؤسسةالوفاء : العلامة المجلسي    جلد : 95  صفحه : 84</span>
+        </div>
+
+        <div class="line"></div>
+    </main>
+
+    <footer>
+        <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        // انیمیشن بارگذاری
+        window.onload = function() {
+            document.body.style.opacity = 1;
+            document.querySelector('.loader').style.display = 'none';
+        };
+    </script>
+</body>
+</html>
