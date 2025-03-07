@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دفع سحر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* چیدمان عمودی */
+            min-height: 100vh; /* حداقل ارتفاع صفحه */
+            opacity: 0; /* مخفی کردن محتوا در ابتدا */
+            transition: opacity 1s; /* انیمیشن برای نمایش */
+        }
+
+        header {
+            background-color: #3498db; /* رنگ منوی شناور */
+            color: white; /* رنگ متن منوی شناور */
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            direction: rtl;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            flex-grow: 1; /* اجازه می‌دهد که محتوا فضای باقی‌مانده را بگیرد */
+            padding-top: 80px; /* فاصله برای منوی ثابت */
+            display: flex;
+            flex-direction: column; /* چیدمان عمودی */
+            align-items: center; /* مرکز کردن افقی */
+            text-align: right; /* راست چین کردن متن */
+            padding: 20px; /* فاصله داخلی */
+        }
+
+        .line-before-title {
+            width: 100%; /* عرض خط */
+            height: 2px; /* ارتفاع خط */
+            background-color: #ccc; /* رنگ خط */
+            margin-bottom: 20px; /* فاصله زیر خط */
+            margin-top: 40px; /* فاصله بالای خط (افزایش فاصله از منو) */
+        }
+
+        .title {
+            font-size: 24px; /* اندازه بزرگ برای عنوان */
+            color: #ff5733; /* رنگ خاص برای عنوان */
+            font-weight: bold; /* درشت کردن متن */
+            margin: 20px 0; /* فاصله بالا و پایین */
+            padding: 0 15px; /* فاصله از راست و چپ */
+        }
+
+        .hadith {
+            color: #4a90e2; /* رنگ دیگر برای متن اول */
+            margin-bottom: 20px; /* فاصله زیر متن */
+            padding: 0 15px; /* فاصله از راست و چپ */
+        }
+
+        .arabic-text {
+            color: #28a745; /* رنگ دیگر برای متن عربی */
+            margin-bottom: 20px; /* فاصله زیر متن */
+            padding: 0 15px; /* فاصله از راست و چپ */
+        }
+
+        .reference {
+            color: #333; /* رنگ معمولی برای مرجع */
+            font-style: italic; /* ایتالیک برای مرجع */
+            margin-bottom: 20px; /* فاصله زیر مرجع */
+            padding: 0 15px; /* فاصله از راست و چپ */
+        }
+
+        .line {
+            width: 100%; /* عرض خط */
+            height: 2px; /* ارتفاع خط */
+            background-color: #ccc; /* رنگ خط */
+            margin-top: 20px; /* فاصله بالای خط */
+        }
+
+        footer {
+            background-color: #3498db; 
+            color: white; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* استایل برای ریسپانسیو */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 20px; /* اندازه کوچک‌تر برای عنوان در صفحه‌های کوچک */
+            }
+            .hadith, .arabic-text, .reference {
+                font-size: 14px; /* اندازه کوچک‌تر برای متن‌ها */
+            }
+        }
+
+        /* انیمیشن لود */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* بالاتر از سایر محتوا */
+        }
+
+        .loader div {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #3498db;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite; /* انیمیشن چرخش */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div></div> <!-- انیمیشن بارگذاری -->
+    </div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://raqiyoun.github.io/Pages/ABJAD" target="_blank" style="color: white; text-decoration: none;">صفحه محاسبه ابجد</a></li>
+                <li><a href="https://raqiyoun.github.io/Pages/12MAH" target="_blank" style="color: white; text-decoration: none;">طالعنامه</a></li>
+                <li><a href="https://raqiyoun.github.io/Pages/ELLAT" target="_blank" style="color: white; text-decoration: none;">علت بیماری</a></li>
+                <li><a href="https://raqiyoun.github.io/Pages/JINN" target="_blank" style="color: white; text-decoration: none;">دفع جن</a></li>
+                <li><a href="https://raqiyoun.github.io/Pages/ROQAYYA" target="_blank" style="color: white; text-decoration: none;">رقیه شرعیه</a></li>
+                <li><a href="https://raqiyoun.github.io/Pages/REZQ" target="_blank" style="color: white; text-decoration: none;">جلب رزق</a></li>
+                <li><a href="https://raqiyoun.github.io/Pages/AWLAD" target="_blank" style="color: white; text-decoration: none;">طلب فرزند</a></li>
+                <li><a href="https://raqiyoun.github.io/Pages/SAADNAHS" target="_blank" style="color: white; text-decoration: none;">ایام سعد و نحش</a></li>	    
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="line-before-title"></div> <!-- خط قبل از عنوان -->
+		
+		        <div class="title">عوذه قرآنی باطل السحر (وراثت)</div>
+
+		        <div class="hadith">
+محمد بن مسلم می‌گوید: این عوذه‌ای است که امام صادق سلام‌الله‌علیه آن را بر ما املا کرده و فرمودند: اسم آن وراثت است، و آن سحر را باطل می‌کند، روی برگه‌ای نوشته و بر شخص سحر شده، آویزان شود      
+  </div>        
+        <div class="arabic-text">
+
+فَلَمَّا أَلْقَوْا قالَ مُوسى‏ ما جِئْتُمْ بِهِ السِّحْرُ إِنَّ اللَّهَ سَيُبْطِلُهُ إِنَّ اللَّهَ لا يُصْلِحُ عَمَلَ الْمُفْسِدِينَ وَيُحِقُّ اللَّهُ الْحَقَّ بِكَلِماتِهِ وَلَوْ كَرِهَ الْمُجْرِمُونَ‏ أَ أَنْتُمْ أَشَدُّ خَلْقاً أَمِ السَّماءُ بَناها رَفَعَ سَمْكَها فَسَوَّاها وَأَغْطَشَ لَیْلَهَا وَأَخْرَجَ ضُحَاهَا وَالأرْضَ بَعْدَ ذَلِکَ دَحَاهَا أَخْرَجَ مِنْهَا مَاءَهَا وَمَرْعَاهَا وَالْجِبَالَ أَرْسَاهَا مَتَاعًا لَکُمْ وَلأنْعَامِکُمْ فَإِذَا جَاءَتِ الطَّامَّةُ الْکُبْرَى یَوْمَ یَتَذَکَّرُ الإنْسَانُ مَا سَعَى وَبُرِّزَتِ الْجَحِیمُ لِمَنْ یَرَى فَأَمَّا مَنْ طَغَى وَآثَرَ الْحَیَاةَ الدُّنْیَا فَإِنَّ الْجَحِیمَ هِیَ الْمَأْوَى وَأَمَّا مَنْ خَافَ مَقَامَ رَبِّهِ وَنَهَى النَّفْسَ عَنِ الْهَوَى فَإِنَّ الْجَنَّةَ هِیَ المَأوَى یَسْأَلُونَکَ عَنِ السَّاعَةِ أَیَّانَ مُرْسَاهَا فِیمَ أَنْتَ مِنْ ذِکْرَاهَا إِلَى رَبِّکَ مُنْتَهَاهَا إِنَّمَا أَنْتَ مُنْذِرُ مَنْ یَخْشَاهَا کَأَنَّهُمْ یَوْمَ یَرَوْنَهَا لَمْ یَلْبَثُوا إِلا عَشِیَّةً أَوْ ضُحَاهَا فَوَقَعَ الْحَقُّ وَبَطَلَ ما كانُوا يَعْمَلُونَ فَغُلِبُوا هُنالِكَ وَانْقَلَبُوا صاغِرِينَ وَأُلْقِيَ السَّحَرَةُ ساجِدِينَ قالُوا آمَنَّا بِرَبِّ الْعالَمِينَ رَبِّ مُوسى‏ وَهارُونَ.        </div>
+        <div class="reference">یونس: آیه ۸۱ و ۸۲/نازعات: آیه ۲۷ تا ۴۶/اعراف: آیه ۱۱۸ تا ۱۲۲)[طب‌الأئمة علیهم‌السلام ج ۱، ص ۱۱۵/تفسير البرهان ج ۵، ص ۸۱۵]
+		</div>
+      
+	   <div class="line"></div> <!-- خط زیر متن‌ها -->
+       		        <div class="title">پیشگیری از سحر و جادو</div>
+
+		        <div class="hadith">
+جعفری می‌گوید: امام کاظم(سلام‌الله‌علیه)را دیدم و در منزلشان ۱ جفت کبوتر بود؛ کبوتر نر، سبز و کبوتر ماده، سیاه بود، پس امام(عليه‌السلام) را دیدم که برایشان، نان خرد می‌کردند و فرمودند: آن 2، شب‌ حرکت می‌کنند و با من اُنس گرفته‌اند، و هیچ تکان خوردنشان در شب نیست، مگر اینکه از ورود جادوگران و افسونگرانِ جن به خانه جلوگیری می‌کند        <div class="arabic-text">
+
+جعفری قال ورَأَيْتُ أَبَاالْحَسَنِ(صلوات‌الله‌علیه) وفِي بَيْتِهِ زَوْجُ حَمَامٍ أَمَّا الذَّكَرُ فَأَخْضَرُ وَأَمَّا أُنْثَى فَسَوْدَاءُ وَرَأَيْتُهُ علیه السلام يَفُتُّ لَهُمَا الْخُبْزَ وَيَقُولُ يَتَحَرَّكَانِ مِنَ اللَّيْلِ فَيُؤْنِسَانِی وَمَا مِنِ انْتِفاضَةٍ يَنْتَفضَانِهَا مِنَ اللَّيْلِ إِلَّا احیی [اتَّقَى] مَنْ دَخَلَ الْبَيْتَ مِنْ عزمة اهل الْأَرْض      
+  </div>
+  <div class="reference">کافي ج ۶، ص ۵۴۷/طب الأئمة الصادقین صلوات‌الله‌علیهم، روایت ۶۹۵/مکارم الأخلاق ج ۱، ص ۱۳۰
+  </div>
+      
+	   <div class="line"></div> <!-- خط زیر متن‌ها -->
+	          		        <div class="title">ایمنی از سِحر با سوره جن</div>
+
+		        <div class="hadith">
+حنان‌بن‌سدير می‌گوید كه امام صادق عليه‌السّلام فرمودند: هرکه زياد سورۀ«قُلْ‌ أُوحِيَ‌ إِلَيَّ‌»(سوره جن)را قراءت كند، در تمام عمر دچار چشم‌زخم جن و دميدن و(جادو)و سحر و مكر جنّیان نگردد، و همراه محمّد صلّى‌اللّٰه‌عليه‌وآله باشد، و می‌گويد: پروردگارا! من خواهانِ تبديل اين مقام و انتقال از آن نيستم
+حَنَانِ بْنِ سَدِيرٍ عَنْ أَبِي عَبْدِ اَللَّهِ عَلَيْهِ السَّلاَمُ قَالَ: مَنْ أَكْثَرَ قِرَاءَةَ قُلْ أُوحِيَ إِلَيَّ لَمْ يُصِبْهُ فِي اَلْحَيَاةِ اَلدُّنْيَا شَيْءٌ مِنْ أَعْيُنِ اَلْجِنِّ وَ لاَ نَفْثِهِمْ وَ لاَ سِحْرِهِمْ وَ لاَ مِنْ كَيْدِهِمْ وَ كَانَ مَعَ مُحَمَّدٍ صَلَّى اَللَّهُ عَلَيْهِ وَآلِهِ فَيَقُولُ يَا رَبِّ لاَ أُرِيدُ بِهِ بَدَلاً وَ لاَ أُرِيدُ أَنْ أَبْغِيَ عَنْهُ حِوَلاً 
+ </div><br>
+ <br><div class="reference">فقه الإمام الرضا علیه السلام ج ۱، ص ۳۴۲/ثواب الأعمال و عقاب الأعمال ج ۱، ص ۱۲۰/أعلام الدین في صفات المؤمنین ج ۱، ص ۳۸۰/مکارم الأخلاق ج ۱، ص ۳۶۵/وسائل الشیعة ج ۶، ص ۲۵۷/بحارالأنوار ج ۹۲، ص ۲۸۷</div>
+  	   <div class="title">با مداومت به خواندن سوره‌ جن، ایمن می‌شویم از: سحر، جادو، طلسم، چشم زخم و آسیب جنیان، بیماری‌های ماورایی. همچنین مداومت بر این سوره برای باطل کردن سحر و جادو و بیماری‌های ماورایی تجربه شده و نافع است ان شاءالله تعالی. جن‌ها هم چشم می‌زنند و یا به وسیله آن‌ها سحر و طلسم می‌کنند. برای ایمن ماندن از چشم زخم و سحر جادوگران و رمالان، سوره جن زیاد بخونیم.</div>
+	   <div class="line"></div> <!-- خط زیر متن‌ها -->
+	          		        <div class="title">ایمنی از سحر و جادو با کندر</div>
+
+		        <div class="hadith">
+
+بومحمد جعفر بن احمد بن علی قمی در کتاب جامع الاحادیث، با حذف اسناد، از اهل بیت صلوات‌الله‌علیهم نقل می‌کند که،
+
+ رسول خدا صلی‌الله‌علیه‌وآله فرمودند:
+
+دود دادنیِ کندر، دود دادنیِ پیامبران (علیهم‌السلام) است؛ و در خانه‌ای که کندر دود می‌کنند، نه سحر و نه شیطان وارد نمی‌شود.
+</div>
+<div class="arabic-text">
+
+الدخنة اللبان دخنة الأنبياء، و لا يدخل بيتا يدخن فيه باللبان سحر و لا شيطان </div>
+ <br>
+   <br><div class="reference">کتاب جامع الاحادیث، ابومحمد جعفر بن احمد بن علی قمی نزیل ری، نشر مجمع البحوث الاسلامیه، ص ۸۷</div>
+      
+	   <div class="line"></div> <!-- خط زیر متن‌ها -->
+	          		        <div class="title">ابطال سحر و جادو با نادعلی</div>
+
+		        <div class="hadith">
+
+اگر کسی را سحر کرده باشند که به هیچ وجه گشاده نشود، این کلمات را ۷ بار بر آب چاه خواند و بدان آب غسل کند و از آن بنوشد سحر باطل شود
+
+</div>
+ <br>
+   <br><div class="reference">رساله خواص نادعلی، هارون بن محمد
+   </div>
+      
+	   <div class="line"></div> <!-- خط زیر متن‌ها -->
+
+    </main>
+
+    <footer>
+        <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        // انیمیشن بارگذاری
+        window.onload = function() {
+            document.body.style.opacity = 1; // نمایش محتوا بعد از بارگذاری
+            document.querySelector('.loader').style.display = 'none'; // مخفی کردن انیمیشن بارگذاری
+        };
+    </script>
+</body>
+</html>
