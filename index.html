@@ -6,6 +6,13 @@
     <title>راقیون علوم و فنون رحمانی</title>
     <meta name="description" content="درمان با آیات قرآن و احادیث معصومین">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet"> <!-- اضافه کردن فونت وزیر -->
+    
+    <!-- اضافه کردن favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- اضافه کردن manifest -->
+    <link rel="manifest" href="manifest.json">
+    
     <style>
         body {
             font-family: 'Vazirmatn', sans-serif; /* استفاده از فونت وزیر */
@@ -141,6 +148,18 @@
                 }, 2000); // زمان انیمیشن
             }, 1000); // زمان تاخیر قبل از شروع انیمیشن
         };
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
     </script>
 </body>
 </html>
