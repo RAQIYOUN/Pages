@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دفع ترس و غم</title>
+	<meta name="description" content="درد پا . در کمر . درد زانو . درد دندان . در سر . درد کتف . درد شکم . درد گوش . درد چشم">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #f4f4f9;
+            color: #333; /* رنگ متن پایه */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity 1s;
+            text-align: center; /* متن مرکز */
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            direction: rtl;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding-top: 80px; /* فاصله برای منوی ثابت */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* وسط‌چین عمودی */
+            padding: 20px;
+            text-align: center; /* وسط‌چین افقی */
+        }
+
+        .line-before-title {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #ff5733; /* رنگ عنوان */
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 0 15px;
+        }
+
+        .hadith, .persian-text {
+            color: #4a90e2; /* رنگ متن حدیث */
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        .arabic-text {
+            color: #28a745; /* رنگ سبز خوانا برای متن عربی */
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        .reference {
+            color: #333; /* رنگ مشکی برای مرجع */
+            font-style: italic;
+            margin-top: 20px; /* فاصله بالای مرجع */
+        }
+
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        /* استایل برای ریسپانسیو */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 20px;
+            }
+            .hadith, .arabic-text, .reference, .persian-text {
+                font-size: 14px;
+            }
+        }
+
+        /* انیمیشن لود */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader div {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #3498db;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div></div>
+    </div>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ABJAD" target="_blank" style="color: white; text-decoration: none;">صفحه محاسبه ابجد</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/12MAH" target="_blank" style="color: white; text-decoration: none;">طالعنامه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ELLAT" target="_blank" style="color: white; text-decoration: none;">علت بیماری</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/JINN" target="_blank" style="color: white; text-decoration: none;">دفع جن</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ROQAYYA" target="_blank" style="color: white; text-decoration: none;">رقیه شرعیه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/SEHR" target="_blank" style="color: white; text-decoration: none;">دفع سحر</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/AWLAD" target="_blank" style="color: white; text-decoration: none;">طلب فرزند</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/SAADNAHS" target="_blank" style="color: white; text-decoration: none;">ایام سعد و نحش</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="line-before-title"></div>
+        <div class="title">رفع ترس</div>
+        
+        <div class="persian-text">
+هرگاه از چیزی ترسیدی، پس ۱۰۰ آيه از هر جاى قرآن كه می‌خواهى بخوان
+<br>
+<div class="title">و بعد ۳ بار بگو: اللَّهُمَّ اكْشِفْ عَنِّي الْبَلَاءَ (خدايا بلا را از من برطرف فرما)</div>
+        </div>
+        
+        <div class="arabic-text">
+إِذَا خِفْتَ أَمْراً فَاقْرَأْ مِائَةَ آيَةٍ مِنَ الْقُرْآنِ مِنْ حَيْثُ شِئْتَ ثُمَّ قُلِ- اللَّهُمَّ اكْشِفْ عَنِّي الْبَلَاءَ ثَلَاثَ مَرَّاتٍ
+        </div>
+        
+        <div class="reference">
+            منبع: <span>كافي، ج : 2 ص : 621</span>
+        </div>
+
+        <div class="line"></div>
+        
+        <div class="title"> دعای رفع وحشت</div>
+        
+        <div class="persian-text">
+احمد بن داود نعمان در کتاب دفع الهموم و الاحزان آورده است<br>
+ ابن عباس گفت: در شب صفین به امیرالمؤمنین علیه‌السلام<br> 
+گفتم: آیا می‌بینی که دشمنان دور تا دور ما را گرفته‌اند؟<br>
+ امیرالمؤمنین علیه‌السلام فرمود: آیا از این وحشت‌زده شدی؟<br>
+ <br>گفتم: بله! پس امام علیه‌السلام فرمودند: این دعا را بگو
+            <div class="title">
+
+اللَّهُمَّ إِنِّی أَعُوذُ بِکَ أَنْ أُضَامَ فِی سُلْطَانِکَ <br>
+ اللَّهُمَّ إِنِّی أَعُوذُ بِکَ أَنْ أَضِلَّ فِی هُدَاکَ <br>
+اللَّهُمَّ إِنِّی أَعُوذُ بِکَ أَنْ أَفْتَقِرَ فِی غِنَاکَ<br>
+ اللَّهُمَّ إِنِّی أَعُوذُ بِکَ أَنْ أُضَیَّعَ فِی سَلَامَتِکَ<br>
+ اللَّهُمَّ إِنِّی أَعُوذُ بِکَ أَنْ أُغْلَبَ وَ الْأَمْرُ إِلَیْکَ<br>
+ </div><br>
+ترجمه
+            <div class="title">
+خداوندا، به تو پناه می‌برم از اینکه در سلطنتت به من ستم شود! <br>
+خداوندا، به تو پناه می‌برم از اینکه در هدایتت، من گمراه شوم! <br>
+خداوندا، به تو پناه می‌برم از اینکه در غنای تو من فقیر شوم! <br>
+خداوندا، به تو پناه می‌برم از اینکه در سلامت تو من ضایع شوم! <br>
+خداوندا، به تو پناه می‌برم از اینکه مغلوب شوم در حالی که امر به سوی توست <br>
+            </div>
+        </div>
+        
+        <div class="arabic-text">
+وَ مِنْ ذَلِکَ دُعَاءٌ لِمَوْلَانَا وَ مُقْتَدَانَا أَمِیرِ الْمُؤْمِنِینَ عَلِیٍّ علیه السلام فِی صِفِّینَ <br>
+وَجَدْتُهُ فِی الْجُزْءِ الرَّابِعِ مِنْ کِتَابِ دَفْعِ الْهُمُومِ وَ الْأَحْزَانِ لِأَحْمَدَ بْنِ دَاوُدَ النُّعْمَانِ<br>
+ قَالَ ابْنُ عَبَّاسٍ: قُلْتُ لِأَمِیرِ الْمُؤْمِنِینَ علیه السلام لَیْلَةَ صِفِّینَ أَ مَا تَرَی الْأَعْدَاءَ قَدْ أَحْدَقُوا بِنَا <br>
+ <br>فَقَالَ علیه‌السلام وَ قَدْ رَاعَکَ هَذَا قُلْتُ نَعَمْ فَقَالَ علیه‌السلام قُلِ
+        </div>
+        
+        <div class="reference">
+            منبع: <span>مهج الدعوات ج ۱، ص ۱۰۳</span>
+        </div>
+
+        <div class="line"></div>
+		        <div class="title">وحشت ارواح از کبوتر</div>
+        
+        <div class="persian-text">
+محمدبن‌کرامه می‌گوید: در منزل امام کاظم علیه‌السلام ۱ جفت کبوتر دیدم که نر، سبز بود و مقداری سبزگی در او بود، و مادّه، سیاه بود؛ و امام علیه‌السلام را دیدم که برای این ۲ کبوتر، روی سفره، نان خُرد می‌کردند و فرمودند: این ۲ کبوتر در شب حرکت می‌کنند و اُنس می‌گیرند و با هر بالی که در شب می‌زنند، خداوند تعالی ارواح[ِخبیث] را که داخل خانه شده‌اند، دور می‌کند
+</div>
+        
+        <div class="arabic-text">
+مُحَمَّدِ بْنِ کَرَامَةَ قَالَ: رَأَیْتُ فِی مَنْزِلِ مُوسَی بْنِ جَعْفَرٍ علیهما السلام زَوْجَ حَمَامٍ أَمَّا الذَّکَرُ فَإِنَّهُ کَانَ أَخْضَرَ بِهِ شَیْ ءٌ مِنَ السَّمْرِ وَ أَمَّا الْأُنْثَی فَسَوْدَاءَ وَ رَأَیْتُهُ یَفُتُّ لَهُمَا الْخُبْزَ وَ هُوَ عَلَی الْخِوَانِ وَ یَقُولُ علیه‌السلام إِنَّهُمَا لَیُحَرِّکَانِ مِنَ اللَّیْلِ وَ یُؤْنِسَانِ وَ مَا مِنِ انْتِفَاضَةٍ یَنْتَفِضَانِهَا مِنَ اللَّیْلِ إِلَّا دَفَعَ اللَّهُ بِهَا مَنْ دَخَلَ الْبَیْتَ مِنَ الْأَرْوَاحِ
+        </div>
+        
+        <div class="reference">
+            منبع: <span>طب الأئمة علیهم السلام ج ۱، ص ۱۱۱/وسائل الشیعة ج ۱۱، ص ۵۲۰</span>
+        </div>
+
+        <div class="line"></div>
+				        <div class="title">وحشت و تنهایی</div>
+        
+        <div class="persian-text">
+شخصی به رسول‌الله صلی‌الله‌علیه‌وآله، از وحشت و تنهایی گلایه کرد، پس پیامبر صلی‌الله‌علیه‌وآله، او را به نگهداریِ یک جفت کبوتر در خانه‌اش دستور دادند
+</div>
+        <div class="arabic-text">
+عَبْدِ اَللَّهِ بْنِ سِنَانٍ عَنْ  أَبِي عَبْدِ اَللَّهِ عَلَيْهِ اَلسَّلاَمُ قَالَ: شَكَا رَجُلٌ إِلَى  رَسُولِ اَللَّهِ صَلَّى اَللَّهُ عَلَيْهِ وَ آلِهِ اَلْوَحْشَةَ فَأَمَرَهُ أَنْ يَتَّخِذَ فِي بَيْتِهِ زَوْجَ حَمَامٍ
+        </div>
+        
+        <div class="reference">
+            منبع: <span>الکافي ج ۶، ص ۵۴۶/من لا يحضره الفقيه ج ۳، ص ۳۵۰/مکارم الأخلاق ج ۱، ص ۱۲۹/وسائل الشیعة ج ۱۱، ص ۵۱۶/بحار الأنوار ج ۶۲، ص ۱۸</span>
+        </div>
+
+        <div class="line"></div>
+		<div class="title">دفع بیماری ترس با آیات قران</div>
+        
+        <div class="persian-text">
+خواندن ناس فلق در صورت کودک (مداوم)<br>
+خواندن آیت الکرسی بر کودک <br>
+ آیات 45 و 46 سوره مبارکه الاسراء<br>
+</div>
+
+ <div class="title">ذکر برای دفع ترس و غم</div>
+        
+        <div class="persian-text">
+برای ترس <br>
+
+حَسْبُنَا اللَّهُ وَ نِعْمَ الْوَكِيلُ‌<br>
+<br>
+برای غم و غمصه <br>
+
+لا إِلهَ إِلَّا أَنْتَ سُبْحانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ‌<br>
+
+<br>
+برای دفع نقشه و مکر بر علیه شما <br>
+
+وَ أُفَوِّضُ أَمْرِي إِلَى اللَّهِ إِنَّ اللَّهَ بَصِيرٌ بِالْعِباد<br>
+
+<br>
+برای ثروت و مال دنیا بی اندازه<br>
+
+ما شاءَ اللَّهُ لا قُوَّةَ إِلَّا بِاللَّهِ‌ <br>
+</div>
+        
+        <div class="arabic-text">
+هر ذکر به تعداد لازم گفته شود 
+ذکر را تا یادتان است بگویید
+یعنی شما ذکر ها را تا انجایی با خودتان زمزمه و تکرار میکنید تا فکرتان مشغول کار دیگر شود
+        </div>
+        
+        <div class="reference">
+            منبع: <span>من لا یحضره الفقیه جلد ۴ صفحه ۳۹۳</span>
+        </div>
+ 
+    </main>
+
+    <footer>
+        <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        // انیمیشن بارگذاری
+        window.onload = function() {
+            document.body.style.opacity = 1;
+            document.querySelector('.loader').style.display = 'none';
+        };
+    </script>
+</body>
+</html>
