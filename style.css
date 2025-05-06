@@ -1,0 +1,88 @@
+body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #f4f4f9;
+            color: #333; /* رنگ متن پایه */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center; /* متن مرکز */
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            direction: rtl;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding-top: 0; /* حذف فاصله از بالا */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* حذف فاصله از بالا */
+            padding: 20px;
+            text-align: center; /* وسط‌چین افقی */
+        }
+
+        .line-before-title {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #ff5733; /* رنگ عنوان */
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 0 15px;
+        }
+
+        .persian-text {
+            color: #4a90e2; /* رنگ متن فارسی */
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        .arabic-text {
+            color: #28a745; /* رنگ سبز خوانا برای متن عربی */
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        .reference {
+            color: #333; /* رنگ مشکی برای مرجع */
+            font-style: italic;
+            margin-top: 20px; /* فاصله بالای مرجع */
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
