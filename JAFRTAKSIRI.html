@@ -137,13 +137,18 @@
 
     <main>
   <h2>تخلیص و جدول مارپیچی حروف</h2>
-  <textarea id="inputText" placeholder="متن سوال خود را وارد کنید"></textarea>
+  <textarea id="inputText" placeholder="مثلاً: سفر خارج برای محمود خوب است یا نه"></textarea>
   <br>
   <button onclick="generate()">تولید جدول</button>
 
   <div id="tableContainer"></div>
 
-                
+                <div class="title">ابجد طالب و مطلوب</div>
+<textarea id="abjadInput" placeholder="متن را وارد کنید برای محاسبه ابجد"></textarea>
+<br>
+<button onclick="calculateAbjad()">محاسبه ابجد</button>
+<div id="abjadResult" class="output"></div>
+
     </main>
   <script>
     function simplifyText(text) {
@@ -211,9 +216,45 @@
       const html = renderTable(table);
       document.getElementById("tableContainer").innerHTML = html;
     }
+  function normalizeText(text) {
+    return text
+      .replace(/ي/g, 'ی')   // ي → ی
+      .replace(/ك/g, 'ک')   // ك → ک
+      .replace(/ة/g, 'ه')   // ة → ه
+      .replace(/ۀ/g, 'ه')   // ة (با همزه) → ه
+      .replace(/ؤ/g, 'و')
+      .replace(/إ|أ|آ/g, 'ا')
+      .replace(/‌/g, '');   // حذف نیم‌فاصله
+  }
+
+  const abjadValues = {
+    'ا': 1, 'ب': 2, 'ج': 3, 'د': 4,
+    'ه': 5, 'و': 6, 'ز': 7, 'ح': 8,
+    'ط': 9, 'ی': 10, 'ک': 20, 'ل': 30,
+    'م': 40, 'ن': 50, 'س': 60, 'ع': 70,
+    'ف': 80, 'ص': 90, 'ق': 100, 'ر': 200,
+    'ش': 300, 'ت': 400, 'ث': 500, 'خ': 600,
+    'ذ': 700, 'ض': 800, 'ظ': 900, 'غ': 1000
+  };
+
+  function calculateAbjad() {
+    const input = document.getElementById("abjadInput").value.trim();
+    if (!input) {
+      document.getElementById("abjadResult").innerText = "";
+      return;
+    }
+    const normalized = normalizeText(input);
+    let sum = 0;
+    for (let char of normalized) {
+      if (abjadValues[char]) {
+        sum += abjadValues[char];
+      }
+    }
+    document.getElementById("abjadResult").innerText = `عدد ابجد: ${sum}`;
+  }
   </script>
     <footer>
-        <p style="margin: 0;">&copy; برای طراحی این اسکریپت پیچیده زحمت زیادی کشیده شده و کپی برداری حرام است</p>
+        <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
     </footer>
 </body>
 </html>
