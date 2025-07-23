@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تست</title>
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            direction: rtl;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            text-align: center;
+        }
+
+        textarea {
+            width: 90%;
+            max-width: 600px;
+            height: 120px;
+            font-size: 1.2em;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 1em;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            direction: rtl;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #aaa;
+            font-size: 1.4em;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        tr:nth-child(odd) td {
+            background-color: #eef5ff;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #ff5733;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 0 15px;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 1.4em;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 500px;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://RAQIYOUN.github.io/Pages" target="_blank" style="color: white; text-decoration: none;">صفحه اصلی</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+  <h2>تخلیص و جدول مارپیچی حروف</h2>
+  <textarea id="inputText" placeholder="مثلاً: سفر خارج برای محمود خوب است یا نه"></textarea>
+  <br>
+  <button onclick="generate()">تولید جدول</button>
+
+  <div id="tableContainer"></div>
+
+                
+    </main>
+  <script>
+    function simplifyText(text) {
+      const seen = new Set();
+      let result = "";
+      for (let char of text) {
+        if (char === ' ' || char === '\n') continue;
+        if (!seen.has(char)) {
+          seen.add(char);
+          result += char;
+        }
+      }
+      return result;
+    }
+
+    function generateMirrorRows(chars) {
+      const rows = [];
+      const original = [...chars];
+      rows.push([...original]); // سطر اول
+
+      let current = [...original];
+      const firstRow = original.join('');
+      let loopLimit = 100; // برای جلوگیری از حلقه بی‌نهایت
+
+      while (loopLimit-- > 0) {
+        let left = 0;
+        let right = current.length - 1;
+        const next = [];
+
+        while (left <= right) {
+          if (right >= left) next.push(current[right--]);
+          if (right >= left) next.push(current[left++]);
+        }
+
+        // اگر دوباره رسیدیم به سطر اول، متوقف شو
+        if (next.join('') === firstRow) break;
+
+        rows.push(next);
+        current = next;
+      }
+
+      rows.push([...original]); // سطر پایانی دوباره مثل اول
+      return rows;
+    }
+
+    function renderTable(table) {
+      let html = '<table>';
+      for (let row of table) {
+        html += '<tr>';
+        for (let cell of row) {
+          html += `<td>${cell}</td>`;
+        }
+        html += '</tr>';
+      }
+      html += '</table>';
+      return html;
+    }
+
+    function generate() {
+      const input = document.getElementById("inputText").value.trim();
+      if (!input) return;
+      const simplified = simplifyText(input);
+      const chars = [...simplified];
+      const table = generateMirrorRows(chars);
+      const html = renderTable(table);
+      document.getElementById("tableContainer").innerHTML = html;
+    }
+  </script>
+    <footer>
+        <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>
