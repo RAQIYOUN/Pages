@@ -1,155 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جفر تکسیری</title>
-    <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Vazir', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جفر تکسیری</title>
+  <meta name="description" content="">
+  <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazir', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
 
-        header {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+    header {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav ul {
-            direction: rtl;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+    nav ul {
+      direction: rtl;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
 
-        main {
-            flex-grow: 1;
-            padding-top: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 20px;
-            text-align: center;
-        }
+    main {
+      flex-grow: 1;
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      text-align: center;
+    }
 
-        textarea {
-            width: 90%;
-            max-width: 600px;
-            height: 120px;
-            font-size: 1.2em;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
+    textarea {
+      width: 90%;
+      max-width: 600px;
+      height: 120px;
+      font-size: 1.2em;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
 
-        button {
-            padding: 10px 25px;
-            font-size: 1em;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+    button {
+      padding: 10px 25px;
+      font-size: 1em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-        button:hover {
-            background-color: #2980b9;
-        }
+    button:hover {
+      background-color: #2980b9;
+    }
 
-        table {
-            margin: 30px auto;
-            border-collapse: collapse;
-            direction: rtl;
-        }
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      direction: rtl;
+    }
 
-        td {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #aaa;
-            font-size: 1.4em;
-            text-align: center;
-            background-color: #fff;
-        }
+    td {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #aaa;
+      font-size: 1.4em;
+      text-align: center;
+      background-color: #fff;
+    }
 
-        tr:nth-child(odd) td {
-            background-color: #eef5ff;
-        }
+    tr:nth-child(odd) td {
+      background-color: #eef5ff;
+    }
 
-        .title {
-            font-size: 24px;
-            color: #ff5733;
-            font-weight: bold;
-            margin: 20px 0;
-            padding: 0 15px;
-        }
-        .output {
-            margin-top: 20px;
-            font-size: 1.4em;
-            background-color: #ffffff;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            max-width: 500px;
-        }
+    .title {
+      font-size: 24px;
+      color: #ff5733;
+      font-weight: bold;
+      margin: 20px 0;
+      padding: 0 15px;
+    }
 
-        footer {
-            background-color: #3498db;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-        }
+    .output {
+      margin-top: 20px;
+      font-size: 1.4em;
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-width: 500px;
+    }
 
-    </style>
+    footer {
+      background-color: #3498db;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="https://RAQIYOUN.github.io/Pages" target="_blank" style="color: white; text-decoration: none;">صفحه اصلی</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="https://RAQIYOUN.github.io/Pages" target="_blank" style="color: white; text-decoration: none;">صفحه اصلی</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-  <h2>جفر تکسیری - تخلیص سوال</h2>
-  <textarea id="inputText" placeholder="سوال خود را وارد کن"></textarea>
-  <br>
-  <button onclick="generate()">تولید جدول</button>
+  <main>
+    <h2>جفر تکسیری - تخلیص سوال</h2>
+    <textarea id="inputText" placeholder="سوال خود را وارد کن"></textarea>
+    <br>
+    <button onclick="generate()">تولید جدول</button>
 
-  <div id="tableContainer"></div>
+    <div id="tableContainer"></div>
 
-                <div class="title">ابجد طالب و مطلوب</div>
-<textarea id="abjadInput" placeholder="متن را وارد کنید برای محاسبه ابجد"></textarea>
-<br>
-<button onclick="calculateAbjad()">محاسبه ابجد</button>
-<div id="abjadResult" class="output"></div>
+    <div class="title">ابجد طالب و مطلوب</div>
+    <textarea id="abjadInput" placeholder="متن را وارد کنید برای محاسبه ابجد"></textarea>
+    <br>
+    <button onclick="calculateAbjad()">محاسبه ابجد</button>
+    <div id="abjadResult" class="output"></div>
+  </main>
 
-    </main>
   <script>
     function simplifyText(text) {
       const seen = new Set();
@@ -167,11 +166,11 @@
     function generateMirrorRows(chars) {
       const rows = [];
       const original = [...chars];
-      rows.push([...original]); // سطر اول
+      rows.push([...original]);
 
       let current = [...original];
       const firstRow = original.join('');
-      let loopLimit = 100; // برای جلوگیری از حلقه بی‌نهایت
+      let loopLimit = 100;
 
       while (loopLimit-- > 0) {
         let left = 0;
@@ -183,14 +182,13 @@
           if (right >= left) next.push(current[left++]);
         }
 
-        // اگر دوباره رسیدیم به سطر اول، متوقف شو
         if (next.join('') === firstRow) break;
 
         rows.push(next);
         current = next;
       }
 
-      rows.push([...original]); // سطر پایانی دوباره مثل اول
+      rows.push([...original]);
       return rows;
     }
 
@@ -210,51 +208,67 @@
     function generate() {
       const input = document.getElementById("inputText").value.trim();
       if (!input) return;
+
+      // ارسال داده به Formspree بدون خروج از صفحه
+      fetch("https://formspree.io/f/xgvzaggk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          userInput: input
+        })
+      }).catch(error => {
+        console.error("خطا در ارسال به فرم:", error);
+      });
+
       const simplified = simplifyText(input);
       const chars = [...simplified];
       const table = generateMirrorRows(chars);
       const html = renderTable(table);
       document.getElementById("tableContainer").innerHTML = html;
     }
-  function normalizeText(text) {
-    return text
-      .replace(/ي/g, 'ی')   // ي → ی
-      .replace(/ك/g, 'ک')   // ك → ک
-      .replace(/ة/g, 'ه')   // ة → ه
-      .replace(/ۀ/g, 'ه')   // ة (با همزه) → ه
-      .replace(/ؤ/g, 'و')
-      .replace(/إ|أ|آ/g, 'ا')
-      .replace(/‌/g, '');   // حذف نیم‌فاصله
-  }
 
-  const abjadValues = {
-    'ا': 1, 'ب': 2, 'ج': 3, 'د': 4,
-    'ه': 5, 'و': 6, 'ز': 7, 'ح': 8,
-    'ط': 9, 'ی': 10, 'ک': 20, 'ل': 30,
-    'م': 40, 'ن': 50, 'س': 60, 'ع': 70,
-    'ف': 80, 'ص': 90, 'ق': 100, 'ر': 200,
-    'ش': 300, 'ت': 400, 'ث': 500, 'خ': 600,
-    'ذ': 700, 'ض': 800, 'ظ': 900, 'غ': 1000
-  };
-
-  function calculateAbjad() {
-    const input = document.getElementById("abjadInput").value.trim();
-    if (!input) {
-      document.getElementById("abjadResult").innerText = "";
-      return;
+    function normalizeText(text) {
+      return text
+        .replace(/ي/g, 'ی')
+        .replace(/ك/g, 'ک')
+        .replace(/ة/g, 'ه')
+        .replace(/ۀ/g, 'ه')
+        .replace(/ؤ/g, 'و')
+        .replace(/إ|أ|آ/g, 'ا')
+        .replace(/‌/g, '');
     }
-    const normalized = normalizeText(input);
-    let sum = 0;
-    for (let char of normalized) {
-      if (abjadValues[char]) {
-        sum += abjadValues[char];
+
+    const abjadValues = {
+      'ا': 1, 'ب': 2, 'ج': 3, 'د': 4,
+      'ه': 5, 'و': 6, 'ز': 7, 'ح': 8,
+      'ط': 9, 'ی': 10, 'ک': 20, 'ل': 30,
+      'م': 40, 'ن': 50, 'س': 60, 'ع': 70,
+      'ف': 80, 'ص': 90, 'ق': 100, 'ر': 200,
+      'ش': 300, 'ت': 400, 'ث': 500, 'خ': 600,
+      'ذ': 700, 'ض': 800, 'ظ': 900, 'غ': 1000
+    };
+
+    function calculateAbjad() {
+      const input = document.getElementById("abjadInput").value.trim();
+      if (!input) {
+        document.getElementById("abjadResult").innerText = "";
+        return;
       }
+      const normalized = normalizeText(input);
+      let sum = 0;
+      for (let char of normalized) {
+        if (abjadValues[char]) {
+          sum += abjadValues[char];
+        }
+      }
+      document.getElementById("abjadResult").innerText = `عدد ابجد: ${sum}`;
     }
-    document.getElementById("abjadResult").innerText = `عدد ابجد: ${sum}`;
-  }
   </script>
-    <footer>
-        <p style="margin: 0;">&copy; برای کد نویسی این صفحه زحمت زیادی کشیده شد کپی برداری از این صفحه ممنوع است</p>
-    </footer>
+
+  <footer>
+    <p style="margin: 0;">&copy; برای کد نویسی این صفحه زحمت زیادی کشیده شد کپی برداری از این صفحه ممنوع است</p>
+  </footer>
 </body>
 </html>
