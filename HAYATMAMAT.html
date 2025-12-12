@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوح حیات و ممات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            direction: rtl;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        main {
+            flex-grow: 1;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #4a90e2;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            width: 300px;
+            max-width: 90%;
+            transition: border-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            background-color: #3498db;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #2e86c1;
+        }
+
+        .box {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        #result {
+            background: #eef6ff;
+            border: 1px solid #4a90e2;
+            padding: 15px;
+            border-radius: 8px;
+            width: 350px;
+            text-align: right;
+            direction: rtl;
+            display: none;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 260px;
+            text-align: center;
+        }
+
+        table td, table th {
+            border: 1px solid #4a90e2;
+            padding: 8px;
+        }
+
+        h2 {
+            color: #4a90e2;
+            margin-top: 40px;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ABJAD" target="_blank">محاسبه ابجد</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/12MAH" target="_blank">طالعنامه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/JINN" target="_blank">دفع جن</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/ROQAYYA" target="_blank">رقیه شرعیه</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/SEHR" target="_blank">دفع سحر</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/REZQ" target="_blank">جلب رزق</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/AWLAD" target="_blank">طلب فرزند</a></li>
+                <li><a href="https://RAQIYOUN.github.io/Pages/SAADNAHS" target="_blank">ایام سعد و نحس</a></li>	    
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>محاسبهٔ حیات و ممات</h1>
+
+        <div class="box">
+            <input type="text" id="name" placeholder="نام شخص را وارد کنید">
+            <input type="number" id="days" placeholder="روزهای گذشته از بیماری">
+
+            <button onclick="calc()">محاسبه</button>
+
+            <div id="result"></div>
+        </div>
+
+        <h2>لوح حیات</h2>
+        <table>
+            <tr><td>1</td><td>2</td><td>9</td><td>10</td></tr>
+            <tr><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+            <tr><td>15</td><td>16</td><td>17</td><td>19</td></tr>
+            <tr><td>22</td><td>23</td><td>27</td><td>28</td></tr>
+        </table>
+
+        <h2>لوح ممات</h2>
+        <table>
+            <tr><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+            <tr><td>7</td><td>8</td><td>18</td><td>21</td></tr>
+            <tr><td>20</td><td>23</td><td>24</td><td>26</td></tr>
+            <tr><td>29</td><td>30</td></tr>
+        </table>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        const hayat = [1,2,9,10,11,12,13,14,15,16,17,19,22,23,27,28];
+        const mamat = [3,4,5,6,7,8,18,21,20,23,24,26,29,30];
+
+function abjad(word) {
+    const values = {
+        'ا':1,'ب':2,'ج':3,'د':4,'ه':5,'و':6,'ز':7,'ح':8,'ط':9,'ی':10,
+        'ک':20,'ل':30,'م':40,'ن':50,'س':60,'ع':70,'ف':80,'ص':90,
+        'ق':100,'ر':200,'ش':300,'ت':400,'ث':500,'خ':600,'ذ':700,
+        'ض':800,'ظ':900,'غ':1000,
+
+        // اضافه شده‌های فارسی
+        'پ': 2,   // معادل ب
+        'چ': 3,   // معادل ج
+        'ژ': 7,   // معادل ز
+        'گ': 20   // معادل ک
+    };
+            let sum = 0;
+            for (let ch of word) if (values[ch]) sum += values[ch];
+            return sum;
+        }
+
+        function calc() {
+            let name = document.getElementById("name").value.trim();
+            let days = parseInt(document.getElementById("days").value);
+
+            if (!name || isNaN(days)) {
+                alert("لطفاً همه فیلدها را کامل وارد کنید.");
+                return;
+            }
+
+            let abjadValue = abjad(name);
+            let total = days + 20 + abjadValue;
+            let remainder = total % 30;
+            if (remainder === 0) remainder = 30;
+
+            let status = "";
+            if (hayat.includes(remainder)) status = "✔️ این عدد در لوح حیات است (امیدوار‌کننده)";
+            else if (mamat.includes(remainder)) status = "❌ این عدد در لوح ممات است (خطرناک)";
+            else status = "این عدد در هیچ یک از لوح‌ها نیست.";
+
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerHTML = `
+                <b>عدد ابجد نام:</b> ${abjadValue}<br>
+                <b>افزودن ۲۰ عدد به روزهای گذشته از بیماری :</b> ${days + 20}<br>
+                <b>جمع کل:</b> ${total}<br>
+                <b>باقی‌مانده طرح سی‌سی:</b> ${remainder}<br><br>
+                <b>${status}</b>
+            `;
+        }
+    </script>
+
+</body>
+</html>
