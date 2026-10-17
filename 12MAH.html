@@ -1,183 +1,39 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طالعنامه</title>
-  <meta name="description" content="طالعنامه 12 برج سال">
-    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Vazir', sans-serif; /* استفاده از فونت Vazir */
-            direction: rtl;
-            background-color: #f0f4f8; /* رنگ پس‌زمینه کل صفحه */
-            margin: 0;
-            padding: 20px;
-            overflow: auto; /* اجازه اسکرول */
-        }
-
-        header {
-            background-color: #3498db; /* رنگ منوی شناور */
-            color: white; /* رنگ متن منوی شناور */
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        h1 {
-            margin-top: 60px; /* To avoid overlap with the fixed header */
-            color: #34495e; /* رنگ عنوان */
-        }
-
-        .month {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #34495e; /* رنگ ماه‌ها */
-            color: white; /* رنگ متن ماه‌ها */
-            margin: 5px 0;
-            border-radius: 5px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .month:hover {
-            background-color: #2980b9; /* رنگ ماه‌ها هنگام هاور */
-        }
-
-        .gender-options {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #f0f4f8; /* رنگ گزینه‌های زنان و مردان */
-            border-radius: 5px;
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-
-        .gender-options.show {
-            max-height: 100px; /* مقدار حداکثر ارتفاع برای انیمیشن */
-            opacity: 1;
-        }
-
-        /* استایل برای مدال */
-        .modal {
-            display: none; /* پنهان کردن مدال */
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7); /* رنگ پس‌زمینه با شفافیت */
-        }
-
-        .modal-content {
-            background-color: #ffffff; /* رنگ پس‌زمینه مدال */
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            border-radius: 5px;
-            font-size: 1.2em; /* افزایش اندازه متن */
-            color: #2c3e50; /* رنگ متن */
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* استایل برای متن در مدال */
-        #modalTitle {
-            font-size: 1.5em; /* اندازه بزرگتر برای عنوان */
-            color: #34495e; /* رنگ عنوان */
-        }
-
-        #modalText {
-            line-height: 1.6; /* فاصله بین خطوط برای خوانایی بیشتر */
-        }
-
-        @media (max-width: 600px) {
-            .modal-content {
-                width: 90%; /* عرض مدال در موبایل */
-            }
-
-            .month {
-                font-size: 1.1em; /* اندازه متن ماه‌ها در موبایل */
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>طالعنامه | راقیون</title>
+<meta name="description" content="طالعنامهٔ ماه‌های سال برای زنان و مردان">
+<meta name="theme-color" content="#2a5d9f">
+<link rel="canonical" href="https://raqiyoun.github.io/Pages/12MAH">
+<meta property="og:type" content="article"><meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="طالعنامه | راقیون"><meta property="og:description" content="طالعنامهٔ ماه‌های سال برای زنان و مردان"><meta property="og:url" content="https://raqiyoun.github.io/Pages/12MAH">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap"></noscript>
 </head>
 <body>
-    <header>
-        <nav>
-    <ul>
-                <li><a href="https://raqiyoun.github.io/Pages/ABJAD" target="_blank" style="color: white; text-decoration: none;">صفحه محاسبه ابجد</a></li>
-                <li><a href="https://raqiyoun.github.io/Pages/ELLAT" target="_blank" style="color: white; text-decoration: none;">علت بیماری</a></li>
-                <li><a href="https://raqiyoun.github.io/Pages/JINN" target="_blank" style="color: white; text-decoration: none;">دفع جن</a></li>
-                <li><a href="https://raqiyoun.github.io/Pages/ROQAYYA" target="_blank" style="color: white; text-decoration: none;">رقیه شرعیه</a></li>
-                <li><a href="https://raqiyoun.github.io/Pages/SEHR" target="_blank" style="color: white; text-decoration: none;">دفع سحر</a></li>
-                <li><a href="https://raqiyoun.github.io/Pages/REZQ" target="_blank" style="color: white; text-decoration: none;">جلب رزق</a></li>
-                <li><a href="https://raqiyoun.github.io/Pages/AWLAD" target="_blank" style="color: white; text-decoration: none;">طلب فرزند</a></li>
-                <li><a href="https://raqiyoun.github.io/Pages/SAADNAHS" target="_blank" style="color: white; text-decoration: none;">ایام سعد و نحش</a></li>	    
-    </ul>
-</nav>
-    </header>
-
-    <main>
-        <h1>ماه‌های سال</h1>
-        <div id="months">
-            <div class="month" onclick="toggleGender(this)">حمل - 1</div>
-            <div class="month" onclick="toggleGender(this)">ثور - 2</div>
-            <div class="month" onclick="toggleGender(this)">جوزا - 3</div>
-            <div class="month" onclick="toggleGender(this)">سرطان - 4</div>
-            <div class="month" onclick="toggleGender(this)">اسد - 5</div>
-            <div class="month" onclick="toggleGender(this)">سنبله - 6</div>
-            <div class="month" onclick="toggleGender(this)">میزان - 7</div>
-            <div class="month" onclick="toggleGender(this)">عقرب - 8</div>
-            <div class="month" onclick="toggleGender(this)">قوس - 9</div>
-            <div class="month" onclick="toggleGender(this)">جدی - 10</div>
-            <div class="month" onclick="toggleGender(this)">دلو - 11</div>
-            <div class="month" onclick="toggleGender(this)">حوت - 12</div>
-        </div>
-
-        <!-- مدال -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2 id="modalTitle"></h2>
-                <p id="modalText"></p>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        // آرایه‌های متنی برای زنان و مردان
+<a class="skip" href="#main">رفتن به محتوا</a>
+<header class="bar"><a href="">→ صفحهٔ اصلی</a><span>راقیون علوم و فنون رحمانی</span></header>
+<main id="main" class="page">
+<div class="phead"><span class="ic" aria-hidden="true">⭐</span><div><h1>طالعنامه</h1><p>ماه تولد را انتخاب کنید</p></div></div>
+<div class="months"><button class="month" type="button" data-m="حمل"><b>حمل</b><small>1</small></button><button class="month" type="button" data-m="ثور"><b>ثور</b><small>2</small></button><button class="month" type="button" data-m="جوزا"><b>جوزا</b><small>3</small></button><button class="month" type="button" data-m="سرطان"><b>سرطان</b><small>4</small></button><button class="month" type="button" data-m="اسد"><b>اسد</b><small>5</small></button><button class="month" type="button" data-m="سنبله"><b>سنبله</b><small>6</small></button><button class="month" type="button" data-m="میزان"><b>میزان</b><small>7</small></button><button class="month" type="button" data-m="عقرب"><b>عقرب</b><small>8</small></button><button class="month" type="button" data-m="قوس"><b>قوس</b><small>9</small></button><button class="month" type="button" data-m="جدی"><b>جدی</b><small>10</small></button><button class="month" type="button" data-m="دلو"><b>دلو</b><small>11</small></button><button class="month" type="button" data-m="حوت"><b>حوت</b><small>12</small></button></div>
+<dialog id="dlg" aria-labelledby="dt">
+<div class="dhead"><h3 id="dt"></h3><button class="x" id="dx" type="button" aria-label="بستن">×</button></div>
+<div class="seg"><button type="button" data-g="w" class="on">زنان</button><button type="button" data-g="m">مردان</button></div>
+<p id="dp"></p>
+</dialog>
+</main>
+<nav class="more" aria-label="صفحات دیگر"><h2>صفحات دیگر</h2><div class="chips"><a href="HAYATMAMAT">⚖️ لوح حیات و ممات</a><a href="JAFRTAKSIRI">🧩 جفر تکسیری</a><a href="ABJAD">🔢 محاسبه ابجد</a><a href="Tars">🕊️ دفع ترس و غم</a><a href="HASAD">🧿 دفع چشم زخم (حسد)</a><a href="SEHR">🛡️ دفع سحر</a><a href="JINN">🕯️ دفع جن</a><a href="DARD">🩹 دفع دردها</a><a href="ROQAYYA">📖 رقیه شرعیه</a><a href="REZQ">🌾 جلب رزق</a><a href="AWLAD">👶 طلب فرزند</a><a href="TAWIZAT/">📜 تعویذات اسلامی</a><a href="TEBB/">🌿 طب اسلامی</a></div></nav>
+<footer>© 2026 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</footer>
+<script src="app.js" defer></script>
+<script>
+// آرایه‌های متنی برای زنان و مردان
         const womenTexts = {
             "حمل": " : هر آن زنی که به طالع حمل باشد زنی است میانه بالا (قد متوسط) و ابرو کشیده و زیرک و عاقل و دانا که هم ستاره با حضرت خدیجة الکبری است و در هر خانه که قدم گذارد دولت و اقبال بر سر اهل خانه است و اولاد طاق (یعنی فرد \" یکی یا سه تا یا پنج تا ...) در طالع دارد و از سه نفر آنها بهره مند شود و با شوهر مشفق و مهربان است و در امور خانه داری بسیار ساعی و کاردان و عاقل است و زود خشم گیرد و زود فرو نشیند – یک زن در همسایگی او در مقام عداوت است (این همسایه در طول زندگی فرد ظاهر میشود که ممکن است تا الان ظاهر شده باشد و یا در آینده ظاهر شود) و نشانه آن زن کوتاه قد و ازرق چشم (آبی) و سفید چهره که در ظاهر با او در مقام دوستی است و در باطن در مقام دشمنی که بیم هلاک باشد، از او حذر کند خود را به خداوند جل جلاله بسپارد. صاحب این طالع در امور خانه خود بسیار عاقل و دانا و زیرک است و در امور زندگانی خود بیناست. دل خود را با خدا صاف کند و هرگز ناشکری نکند تا دست به هر کاری می‌زند زود اصلاح شود. در میان خویشان یک نفر او را نصیحت می‌کند و او خیال می‌کند که با او دشمنی دارد، البته نصیحت او را قبول کند تا در صدمه نیفتد و هرگز محتاج نشود. در امر دین داری خود برقرار باشد و کاهل نمازی نباید بکند و در امور خانه داری و شوهر داری ثابت باشد و مراوده با مردم ناکس نکند تا هیچ وقت به بلای دنیا و آخرت مبتلا نشود و هرگاه اولاد او نشود یا نماند، از سادات موسوی دعا بگیرد تا بماند و نذری هم کرده است باید ادا کند. بسازد صاحب این طالع را رخت سبز و روز پنج شنبه (یعنی لباس سبز رنگ برای او خوش یمن است و روزهای پنج شنبه برای او برکت دارد و اگر می‌خواهد کاری را شروع کند یا خواستگاری دارد روز پنج شنبه قرار بگذارد) – دعای جوشن کبیر (که کتاب جیبی آن در کتابفروشی‌ها هست) با خود دارد تا از بلایات محفوظ بماند.",
             "ثور": " : هر آن زنی که به طالع ثور باشد زنی است صالحه و خوش خلق و نیکو منظر (زیبا) و عاقل و دانا و زیرک و او را بر سینه یا بر اعضاء خال یا نشانی باشد که نشانه دولت و اقبال اوست. بدگو و دشمن بسیار دارد اما کسی نتواند به او آسیبی برساند، برای آنکه توکل با خداست. اگر جان خود را فدای مردم کند قدر وی را ندانند. ستاره آن زن ستاره حضرت هاجر علیه السلام است. از سخن خوش جان را فدا کند و هر چه سن او بالا رود، کارش بهتر میشود. مدتی است که در کار خود سرگردان است، آنهم از چشم زخم و حسادت مردم است، دعای چشم زخم با خود دارد و صدقه به فقرای ارحام بدهد اما طوری که کسی نفهمد و نیز در صورت داشتن شوهر، باید با اجازه شوهرش باشد تا کارش درست شود. با شوهر مشفق و مهربان باشد. به اذیت احدی راضی نباشد و در کار خیر ساعی باشد، هشت فرزند در طالع دارد (البته نه اینکه حتما همه هشت تا را خواهد آورد بلکه به میل خودش است که بیاورد یا نه). هر کس چیزی از او بگیرد به سختی به او پس دهد. یک زن با او در مقام عداوت باشد و زیاد صدمه به او رساند و به او نیش زند اما نتواند که به او آسیبی برساند. از زن حرام خوار بد عمل حذر کند تا در بلا نیافتد. دل خود را با خدا صاف نماید نا خداوند کار او را به اصلاح بیاورد. اگر به فرزندان او آسیبی برسد از سادات موسوی رضوی دعا بگیرد تا رفع شود. همیشه از درد کمر و سر بنالد که از علت باد قولنج باشد باید دارو بخورد. ماه نو را بر آب جاری نظر کند (وقتی هلال اول ماه را دید بر آب جاری نگاه کند). طی عمری که داشته، نقصان بزرگی به او رسیده، اما عاقبت به خیر بوده است. شانه سر خود را به کسی نباید بدهد تا در چلّه نیافتد و کارش رو به تنزل و گرفتاری نرود و هیچ وقت خوابی را که می بیند به کسی باز نگوید چرا که همه نمی توانند خواب را مطابق واقع تعبیر کنند. راز دل را با همه کس نگوید. در شش سالگی خطر مرگ او را تهدید می نماید که اگر از آن بگذرد به عمر طبیعی می رسد. دعای حرز ابودجانه با خود داشته باشد تا از بلا ایمن گردد. برای صاحب این طالع، روز جمعه و لباس سبز و آبی و انگشتر یاقوت خوش یُمن است و آن را در نظر بگیرد تا همیشه عزیز و محترم باشد. (یعنی برای اینکه شانس بیاورد کارهاشو روز جمعه شروع کنه – انگشتر یاقوت دستش باشه – لباس سبز یا آبی یا مخلوطی از ایندو بپوشد)",
@@ -209,71 +65,13 @@
     "دلو": " : هر کس به طالع دلو باشد مردی است هم ستاره حضرت یحیی ، عنصر او بادی است و خاکی ( یعنی مثل باد از این حال و فکر به آن حال و فکر تغییر میکند و دمدمی است و ثباتی ندارد ) و مثل خاک سرد است . او مردی است با دولت و پاکدامن و رحیم دل و مهربان . به آزار احدی راضی نیست . با هر کس نیکی کند جفا بیند . قرض دادن و ضامن داری به او نمی سازد . به هر کس دوستی کند عاقبت پشیمان شود . در امورات خود همیشه حیران و سرگردان است . باید دل خود را با خدا صاف کند . صاحب این طالع در سن چهارده سالگی خطر مرگ او را تهدید می کند که صدقه بدهد چون از ان بگذرد  به سلامتی به عمر طبیعی برسد  و به خوشگذرانی روزگار بگذراند . مدتی از جفت خود جدائی کند و مسافرت او به طول انجامد . با رفیق ناموافق دمساز شود که هر قدر بخواهد خود را رها کند نتواند اما از لطف خدا و توسل به ائمه هدی ع ، رهایی یابد و عاقبت به خیر شود . از دو فرزند بهره مند شود . از دنیا بیرون نرود مگر انکه آمرزیده و رستگار شود . صاحب این طالع را بسازد از ماه ها ، ماه شوال ( برایش خوش یُمن است ) . لباس رنگارنگ . انگشتر فیروزه  و یاقوت . هر گاه بخواهد از بلاها ایمن شود دعای حرز چهارده معصوم ع را با خود دارد تا از جمیع بلیات محفوظ بماند و امورات دنیا و آخرت  او اصلاح شود.",
     "حوت": " : هر کس که به طالع حوت باشد مردی است بسیار عاقل و هم ستاره حضرت ابراهیم علیه السلام و مردی باشد رحیم دل و با سخاوت و شجاعت و زیرک و دانا. مدتی است که سر رشته کار خود را گم کرده اما به لطف خداوند کارش نیکو شود چون دل خود را با خدا صاف کرده توکل به خدا دارد. از زن بدفعل حرامزاده حذر کند چونکه مدتی است در مقام دوستی با اوست اما در واقع در مقام دشمنی است. صاحب این طالع از زن و فرزند بهره مند شود. قرض دادن و ضامن داری به او نسازد چرا که بسیار آدم با حیایی است و در گرفتن نتواند اداء حق خود را بنماید (بخاطر خجالت و رودربایستی حقشو نمیتونه پس بگیره). از جمله دوستان یک نفر با او مشفق و مهربان است. از دیگران بهره مند نگردد حتی آنکه در صدد آزار و اذیت آنها است (یعنی با مردم سازگار نیست و حتی ممکنه به آنها اذیت هم برساند). از مال حرام، خیر و بهره نبیند. او فردی است که در نظر خلائق عزیز و مکرم باشد اما دوست و دشمن خود را نمی شناسد. در کار خود مدبر و دانا است. هرگاه اراده سفری بنماید باید دل خود را با خدا صاف کند و توکل بر خداوند متعال نماید تا از آن سفر با سود و منفعت و بهره مند بازگردد. حیوانات سم شکافته برای او بسیار خوب است از حیوانات درنده به او آسیبی رسد اما عاقبت به خیر باشد. بسازد به او از ماه ها ماه ذی حجه (یعنی برایش خوش یُمن است) و انگشتر عقیق و دُرّ و یاقوت و لباس پشمینه و لباس سبز رنگ (یعنی اینها برایش شانس می‌آورد). ماه نو را بر روی قرآن نگاه کند تا آن ماه بر او مبارک گردد. صاحب این طالع هر گاه بخواهد از مضرات و بلاها محفوظ ماند دعای حرز حضرت جواد علیه السلام با خود دارد تا از بلاها ایمن و کارش اصلاح شود."
 	   };
-
-        function toggleGender(monthElement) {
-            const genderOptions = monthElement.querySelector('.gender-options');
-
-            // بستن سایر گزینه‌ها
-            const allOptions = document.querySelectorAll('.gender-options');
-            allOptions.forEach(option => {
-                if (option !== genderOptions) {
-                    option.classList.remove('show');
-                    option.remove(); // حذف گزینه‌های قبلی
-                }
-            });
-
-            // اگر گزینه‌ها وجود ندارد، ایجاد می‌کنیم
-            if (!genderOptions) {
-                const newGenderOptions = document.createElement('div');
-                newGenderOptions.className = 'gender-options';
-                newGenderOptions.innerHTML = `
-                    <button onclick="showContent('women', '${monthElement.innerText.split(' - ')[0]}')" style="background-color: #2980b9; color: white; border: none; padding: 5px; border-radius: 5px; cursor: pointer;">زنان</button>
-                    <button onclick="showContent('men', '${monthElement.innerText.split(' - ')[0]}')" style="background-color: #2980b9; color: white; border: none; padding: 5px; border-radius: 5px; cursor: pointer;">مردان</button>
-                `;
-                monthElement.appendChild(newGenderOptions);
-                setTimeout(() => newGenderOptions.classList.add('show'), 10);
-            } else {
-                genderOptions.classList.toggle('show');
-            }
-        }
-
-        function showContent(gender, month) {
-            const modal = document.getElementById("myModal");
-            const modalTitle = document.getElementById("modalTitle");
-            const modalText = document.getElementById("modalText");
-
-            // نمایش محتوا در مدال
-            if (gender === 'women') {
-                modalTitle.innerText = `زنان در ماه ${month}`;
-                modalText.innerText = womenTexts[month];
-            } else if (gender === 'men') {
-                modalTitle.innerText = `مردان در ماه ${month}`;
-                modalText.innerText = menTexts[month];
-            }
-            modal.style.display = "block"; // نمایش مدال
-
-            // غیرفعال کردن اسکرول صفحه
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById("myModal");
-            modal.style.display = "none"; // پنهان کردن مدال
-
-            // فعال کردن اسکرول صفحه
-            document.body.style.overflow = 'auto';
-        }
-
-        // بستن مدال با کلیک خارج از آن
-        window.onclick = function(event) {
-            const modal = document.getElementById("myModal");
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
-	<footer style="background-color: #3498db; color: white; text-align: center; padding: 10px 0; position: relative; bottom: 0; width: 100%;">
-    <p style="margin: 0;">&copy; 2025 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</p>
-</footer>
+const dlg=document.getElementById('dlg'),dt=document.getElementById('dt'),dp=document.getElementById('dp'),seg=[...document.querySelectorAll('.seg button')];
+let cur='';
+function show(g){seg.forEach(b=>b.classList.toggle('on',b.dataset.g===g));dp.textContent=(g==='w'?womenTexts:menTexts)[cur]||'';dp.scrollTop=0}
+document.querySelector('.months').addEventListener('click',e=>{const b=e.target.closest('.month');if(!b)return;cur=b.dataset.m;dt.textContent='طالع '+cur;show('w');dlg.showModal()});
+seg.forEach(b=>b.addEventListener('click',()=>show(b.dataset.g)));
+document.getElementById('dx').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+</script>
 </body>
 </html>
