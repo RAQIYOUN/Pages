@@ -1,274 +1,68 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>جفر تکسیری</title>
-  <meta name="description" content="">
-  <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Vazir', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    header {
-      background-color: #3498db;
-      color: white;
-      padding: 10px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav ul {
-      direction: rtl;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin-right: 20px;
-    }
-
-    main {
-      flex-grow: 1;
-      padding-top: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 20px;
-      text-align: center;
-    }
-
-    textarea {
-      width: 90%;
-      max-width: 600px;
-      height: 120px;
-      font-size: 1.2em;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 10px 25px;
-      font-size: 1em;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-    }
-
-    table {
-      margin: 30px auto;
-      border-collapse: collapse;
-      direction: rtl;
-    }
-
-    td {
-      width: 40px;
-      height: 40px;
-      border: 1px solid #aaa;
-      font-size: 1.4em;
-      text-align: center;
-      background-color: #fff;
-    }
-
-    tr:nth-child(odd) td {
-      background-color: #eef5ff;
-    }
-
-    .title {
-      font-size: 24px;
-      color: #ff5733;
-      font-weight: bold;
-      margin: 20px 0;
-      padding: 0 15px;
-    }
-
-    .output {
-      margin-top: 20px;
-      font-size: 1.4em;
-      background-color: #ffffff;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      max-width: 500px;
-    }
-
-    footer {
-      background-color: #3498db;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      width: 100%;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>جفر تکسیری | راقیون</title>
+<meta name="description" content="جفر تکسیری: تخلیص سوال و محاسبهٔ ابجد طالب و مطلوب">
+<meta name="theme-color" content="#2a5d9f">
+<link rel="canonical" href="https://raqiyoun.github.io/Pages/JAFRTAKSIRI">
+<meta property="og:type" content="article"><meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="جفر تکسیری | راقیون"><meta property="og:description" content="جفر تکسیری: تخلیص سوال و محاسبهٔ ابجد طالب و مطلوب"><meta property="og:url" content="https://raqiyoun.github.io/Pages/JAFRTAKSIRI">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap"></noscript>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="https://RAQIYOUN.github.io/Pages" target="_blank" style="color: white; text-decoration: none;">صفحه اصلی</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <h2>جفر تکسیری - تخلیص سوال</h2>
-    <textarea id="inputText" placeholder="سوال خود را وارد کن"></textarea>
-    <br>
-    <button onclick="generate()">تولید جدول</button>
-
-    <div id="tableContainer"></div>
-
-    <div class="title">ابجد طالب و مطلوب</div>
-    <textarea id="abjadInput" placeholder="متن را وارد کنید برای محاسبه ابجد"></textarea>
-    <br>
-    <button onclick="calculateAbjad()">محاسبه ابجد</button>
-    <div id="abjadResult" class="output"></div>
-  </main>
-
-  <script>
-    function simplifyText(text) {
-      const seen = new Set();
-      let result = "";
-      for (let char of text) {
-        if (char === ' ' || char === '\n') continue;
-        if (!seen.has(char)) {
-          seen.add(char);
-          result += char;
-        }
-      }
-      return result;
-    }
-
-    function generateMirrorRows(chars) {
-      const rows = [];
-      const original = [...chars];
-      rows.push([...original]);
-
-      let current = [...original];
-      const firstRow = original.join('');
-      let loopLimit = 100;
-
-      while (loopLimit-- > 0) {
-        let left = 0;
-        let right = current.length - 1;
-        const next = [];
-
-        while (left <= right) {
-          if (right >= left) next.push(current[right--]);
-          if (right >= left) next.push(current[left++]);
-        }
-
-        if (next.join('') === firstRow) break;
-
-        rows.push(next);
-        current = next;
-      }
-
-      rows.push([...original]);
-      return rows;
-    }
-
-    function renderTable(table) {
-      let html = '<table>';
-      for (let row of table) {
-        html += '<tr>';
-        for (let cell of row) {
-          html += `<td>${cell}</td>`;
-        }
-        html += '</tr>';
-      }
-      html += '</table>';
-      return html;
-    }
-
-    function generate() {
-      const input = document.getElementById("inputText").value.trim();
-      if (!input) return;
-
-      // ارسال داده به Formspree بدون خروج از صفحه
-      fetch("https://formspree.io/f/xgvzaggk", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          userInput: input
-        })
-      }).catch(error => {
-        console.error("خطا در ارسال به فرم:", error);
-      });
-
-      const simplified = simplifyText(input);
-      const chars = [...simplified];
-      const table = generateMirrorRows(chars);
-      const html = renderTable(table);
-      document.getElementById("tableContainer").innerHTML = html;
-    }
-
-    function normalizeText(text) {
-      return text
-        .replace(/ي/g, 'ی')
-        .replace(/ك/g, 'ک')
-        .replace(/ة/g, 'ه')
-        .replace(/ۀ/g, 'ه')
-        .replace(/ؤ/g, 'و')
-        .replace(/إ|أ|آ/g, 'ا')
-        .replace(/‌/g, '');
-    }
-
-    const abjadValues = {
-      'ا': 1, 'ب': 2, 'ج': 3, 'د': 4,
-      'ه': 5, 'و': 6, 'ز': 7, 'ح': 8,
-      'ط': 9, 'ی': 10, 'ک': 20, 'ل': 30,
-      'م': 40, 'ن': 50, 'س': 60, 'ع': 70,
-      'ف': 80, 'ص': 90, 'ق': 100, 'ر': 200,
-      'ش': 300, 'ت': 400, 'ث': 500, 'خ': 600,
-      'ذ': 700, 'ض': 800, 'ظ': 900, 'غ': 1000
-    };
-
-    function calculateAbjad() {
-      const input = document.getElementById("abjadInput").value.trim();
-      if (!input) {
-        document.getElementById("abjadResult").innerText = "";
-        return;
-      }
-      const normalized = normalizeText(input);
-      let sum = 0;
-      for (let char of normalized) {
-        if (abjadValues[char]) {
-          sum += abjadValues[char];
-        }
-      }
-      document.getElementById("abjadResult").innerText = `عدد ابجد: ${sum}`;
-    }
-  </script>
-
-  <footer>
-    <p style="margin: 0;">&copy; برای کد نویسی این صفحه زحمت زیادی کشیده شد کپی برداری از این صفحه ممنوع است</p>
-  </footer>
+<a class="skip" href="#main">رفتن به محتوا</a>
+<header class="bar"><a href="">→ صفحهٔ اصلی</a><span>راقیون علوم و فنون رحمانی</span></header>
+<main id="main" class="page">
+<div class="phead"><span class="ic" aria-hidden="true">🧩</span><div><h1>جفر تکسیری</h1></div></div>
+<div class="panel">
+<label for="q">تخلیص سوال</label>
+<textarea class="field" id="q" placeholder="سوال خود را وارد کن"></textarea>
+<button class="btn" id="gen" type="button">تولید جدول</button>
+<p class="note">توجه: متن این بخش هنگام «تولید جدول» به سرویس فرم سایت (Formspree) ارسال می‌شود.</p>
+<div class="tablewrap" id="tbl"></div>
+</div>
+<div class="panel">
+<label for="ab">ابجد طالب و مطلوب</label>
+<textarea class="field" id="ab" placeholder="متن را وارد کنید برای محاسبه ابجد"></textarea>
+<button class="btn" id="calc" type="button">محاسبه ابجد</button>
+<div class="res" id="abr" hidden></div>
+</div>
+</main>
+<nav class="more" aria-label="صفحات دیگر"><h2>صفحات دیگر</h2><div class="chips"><a href="HAYATMAMAT">⚖️ لوح حیات و ممات</a><a href="ABJAD">🔢 محاسبه ابجد</a><a href="12MAH">⭐ طالعنامه</a><a href="Tars">🕊️ دفع ترس و غم</a><a href="HASAD">🧿 دفع چشم زخم (حسد)</a><a href="SEHR">🛡️ دفع سحر</a><a href="JINN">🕯️ دفع جن</a><a href="DARD">🩹 دفع دردها</a><a href="ROQAYYA">📖 رقیه شرعیه</a><a href="REZQ">🌾 جلب رزق</a><a href="AWLAD">👶 طلب فرزند</a><a href="TAWIZAT/">📜 تعویذات اسلامی</a><a href="TEBB/">🌿 طب اسلامی</a></div></nav>
+<footer>© 2026 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</footer>
+<script src="app.js" defer></script>
+<script src="abjad.js"></script>
+<script>
+const FORM_ENDPOINT="https://formspree.io/f/xgvzaggk"; // برای غیرفعال‌کردن ارسال، مقدار را خالی بگذارید
+const $=i=>document.getElementById(i);
+function simplify(t){const seen=new Set();let r='';for(const c of t){if(c===' '||c==='\n')continue;if(!seen.has(c)){seen.add(c);r+=c}}return r}
+function mirrorRows(chars){
+ const rows=[[...chars]],first=chars.join('');let cur=[...chars],n=100;
+ while(n-->0){let l=0,r=cur.length-1;const next=[];
+  while(l<=r){if(r>=l)next.push(cur[r--]);if(r>=l)next.push(cur[l++])}
+  if(next.join('')===first)break;rows.push(next);cur=next}
+ rows.push([...chars]);return rows;
+}
+$('gen').addEventListener('click',()=>{
+ const input=$('q').value.trim();if(!input)return;
+ if(FORM_ENDPOINT)fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({userInput:input}),keepalive:true}).catch(()=>{});
+ const t=document.createElement('table');
+ mirrorRows([...simplify(input)]).forEach(row=>{const tr=t.insertRow();row.forEach(c=>{tr.insertCell().textContent=c})});
+ $('tbl').replaceChildren(t);
+});
+$('calc').addEventListener('click',()=>{
+ const v=$('ab').value.trim(),o=$('abr');
+ if(!v){o.hidden=true;return}
+ o.hidden=false;o.textContent='عدد ابجد: '+abjadOf(v).sum;
+});
+</script>
 </body>
 </html>

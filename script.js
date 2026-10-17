@@ -8,3 +8,4 @@ function f(){const v=n(q.value);let any=false;
 q.addEventListener('input',f);
 addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus()}});
 })();
+if('serviceWorker'in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('service-worker.js').catch(()=>{}))}
