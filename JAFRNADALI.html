@@ -27,6 +27,8 @@
 .tablewrap tr.mark th,.tablewrap tr.mark td{background:rgba(42,93,159,.08)}
 .tablewrap .rn{opacity:.6;margin-inline-end:.4em}
 .msg{margin-top:10px;font-size:.9em}
+.stx{margin:14px 0 6px;font-weight:700}
+.dua{font-size:1.2em;line-height:2.4;text-align:center;padding:10px 12px;border:1px solid rgba(128,128,128,.35);border-radius:10px;background:rgba(42,93,159,.06)}
 </style>
 </head>
 <body>
@@ -35,10 +37,29 @@
 <main id="main" class="page">
 <div class="phead"><span class="ic" aria-hidden="true">🌀</span><div><h1>جفر ناد علی</h1></div></div>
 <div class="panel">
-<label for="q">متن ورودی</label>
-<textarea class="field" id="q" placeholder="سوال را وارد کن"></textarea>
+<p class="stx">پیش از شروع</p>
+<p class="stx">۱. سورهٔ حمد را بخوانید:</p>
+<div class="dua">
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
+الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ<br>
+الرَّحْمَٰنِ الرَّحِيمِ<br>
+مَالِكِ يَوْمِ الدِّينِ<br>
+إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ<br>
+اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ<br>
+صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+</div>
+<p class="stx">۲. «ناد علی» را بخوانید:</p>
+<div class="dua">
+نَادِ عَلِيّاً مُظْهِرَ الْعَجَائِبِ<br>
+تَجِدْهُ عَوْناً لَكَ فِي النَّوَائِبِ<br>
+كُلُّ هَمٍّ وَغَمٍّ سَيَنْجَلِي<br>
+بِوِلَايَتِكَ يَا عَلِيُّ يَا عَلِيُّ يَا عَلِيُّ
+</div>
+<p class="stx">۳. سپس سؤال را در کادر زیر وارد کنید:</p>
+<label for="q">سؤال</label>
+<textarea class="field" id="q" placeholder="در کادر، سؤال را وارد کنید"></textarea>
 <button class="btn" id="gen" type="button">تولید جدول</button>
-<p class="note">محاسبه کاملاً در مرورگر انجام می‌شود .</p>
+<p class="note">سؤال را کامل و با حروف فارسی یا عربی بنویسید؛ حروف تکراری، فاصله و علائم خودکار حذف می‌شوند.</p>
 <div class="tablewrap" id="tbl"></div>
 <p class="msg" id="msg" hidden></p>
 </div>
