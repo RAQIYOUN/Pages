@@ -14,6 +14,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap"></noscript>
 <style>
@@ -28,7 +29,15 @@
 .tablewrap .rn{opacity:.6;margin-inline-end:.4em}
 .msg{margin-top:10px;font-size:.9em}
 .stx{margin:14px 0 6px;font-weight:700}
-.dua{font-size:1.2em;line-height:2.4;text-align:center;padding:10px 12px;border:1px solid rgba(128,128,128,.35);border-radius:10px;background:rgba(42,93,159,.06)}
+.bismillah-box{position:relative;background:linear-gradient(160deg,#0f6e5f 0%,#0c5648 55%,#0a4a3e 100%);border-radius:16px;box-shadow:0 4px 18px #0f6e5f40;border:1px solid #cfa54a;padding:22px 20px 20px;margin:0 0 20px;text-align:center;overflow:hidden}
+.bismillah-box::before,.bismillah-box::after{content:'✦';position:absolute;top:10px;font-size:12px;color:#d8b46a;opacity:.85}
+.bismillah-box::before{right:14px}
+.bismillah-box::after{left:14px}
+.bismillah-box .bism-line{font-family:'Amiri','Vazirmatn',serif;font-size:20px;font-weight:700;color:#f1d38a;margin:0 0 12px;letter-spacing:.3px;text-shadow:0 1px 3px #0006}
+.bismillah-box .ayah-line{font-family:'Amiri','Vazirmatn',serif;font-size:18px;line-height:2.35;color:#fbf3dd;margin:0;direction:rtl;position:relative;z-index:1}
+.bismillah-box .ayah-line::before{content:'﴿ ';color:#d8b46a}
+.bismillah-box .ayah-line::after{content:' ﴾';color:#d8b46a}
+.bismillah-box .ayah-line.plain::before,.bismillah-box .ayah-line.plain::after{content:none}
 </style>
 </head>
 <body>
@@ -39,23 +48,24 @@
 <div class="panel">
 <p class="stx">پیش از شروع</p>
 <p class="stx">۱. سورهٔ حمد را بخوانید:</p>
-<div class="dua">
-بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
-الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ<br>
-الرَّحْمَٰنِ الرَّحِيمِ<br>
-مَالِكِ يَوْمِ الدِّينِ<br>
-إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ<br>
-اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ<br>
-صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ
+<div class="bismillah-box">
+<p class="bism-line">بسم الله الرحمن الرحیم</p>
+<p class="ayah-line">الْحَمْدُ لِلّهِ رَبِّ الْعالَمینَ<br>
+الرَّحْمنِ الرَّحیمِ<br>
+مالِکِ یَوْمِ الدّینِ<br>
+إِیّاکَ نَعْبُدُ وَ إِیّاکَ نَسْتَعینُ<br>
+اهْدِنَا الصِّراطَ الْمُسْتَقیمَ<br>
+صِراطَ الَّذینَ أَنْعَمْتَ عَلَیْهِمْ غَیْرِ الْمَغْضُوبِ عَلَیْهِمْ وَ لَا الضّالّینَ</p>
 </div>
 <p class="stx">۲. «ناد علی» را بخوانید:</p>
-<div class="dua">
-نادِ عَلِیًّا مُظْهِرُ الْعَجائِبِ<br>
+<div class="bismillah-box">
+<p class="bism-line">ناد علی</p>
+<p class="ayah-line plain">نادِ عَلِیًّا مُظْهِرُ الْعَجائِبِ<br>
 تَجِدْهُ عَوْنًا لَکَ فِی النَّوائِبِ<br>
 کُلَّ هَمٍّ وَ غَمٍّ سَیَنْجَلِی<br>
 بِعَظَمَتِکَ یا اَللهُ<br>
 بِنُبُوَّتِکَ یا مُحَمَّدُ<br>
-بِوِلایَتِکَ یا عَلِیُّ یا عَلِیُّ یا عَلِیُّ
+بِوِلایَتِکَ یا عَلِیُّ یا عَلِیُّ یا عَلِیُّ</p>
 </div>
 <p class="stx">۳. سپس سؤال را در کادر زیر وارد کنید:</p>
 <label for="q">سؤال</label>
