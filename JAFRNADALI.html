@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>جفر ناد علی | راقیون</title>
+<meta name="description" content="جفر ناد علی: جدول ۱۶ سطری با ابجد فلکی، مستحصلهٔ ناد علی، نصف‌کردن و امتزاج حروف">
+<meta name="theme-color" content="#2a5d9f">
+<link rel="canonical" href="https://raqiyoun.github.io/Pages/JAFRNADALI">
+<meta property="og:type" content="article"><meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="جفر ناد علی | راقیون"><meta property="og:description" content="جفر ناد علی: جدول ۱۶ سطری با ابجد فلکی، مستحصلهٔ ناد علی، نصف‌کردن و امتزاج حروف"><meta property="og:url" content="https://raqiyoun.github.io/Pages/JAFRNADALI">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap"></noscript>
+<style>
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:12px}
+.tablewrap table{border-collapse:collapse;margin:0 auto;min-width:max-content}
+.tablewrap th,.tablewrap td{border:1px solid rgba(128,128,128,.4);padding:4px 9px;text-align:center;min-width:2em}
+.tablewrap th{font-size:.75em;font-weight:700;white-space:nowrap;text-align:right;background:rgba(128,128,128,.1)}
+.tablewrap td.num{font-variant-numeric:tabular-nums;opacity:.85}
+.tablewrap td.cut{text-decoration:line-through;opacity:.5}
+.tablewrap td.split{border-left:3px solid currentColor}
+.tablewrap tr.mark th,.tablewrap tr.mark td{background:rgba(42,93,159,.08)}
+.tablewrap .rn{opacity:.6;margin-inline-end:.4em}
+.msg{margin-top:10px;font-size:.9em}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">رفتن به محتوا</a>
+<header class="bar"><a href="index.html">→ صفحهٔ اصلی</a><span>راقیون علوم و فنون رحمانی</span></header>
+<main id="main" class="page">
+<div class="phead"><span class="ic" aria-hidden="true">🌀</span><div><h1>جفر ناد علی</h1></div></div>
+<div class="panel">
+<label for="q">متن ورودی</label>
+<textarea class="field" id="q" placeholder="سوال یا نام را وارد کن"></textarea>
+<button class="btn" id="gen" type="button">تولید جدول</button>
+<p class="note">محاسبه کاملاً در مرورگر انجام می‌شود و متن ورودی به جایی ارسال نمی‌شود.</p>
+<div class="tablewrap" id="tbl"></div>
+<p class="msg" id="msg" hidden></p>
+</div>
+</main>
+<nav class="more" aria-label="صفحات دیگر"><h2>صفحات دیگر</h2><div class="chips"><a href="JAFRTAKSIRI.html">🧩 جفر تکسیری</a><a href="HAYATMAMAT.html">⚖️ لوح حیات و ممات</a><a href="ABJAD.html">🔢 محاسبه ابجد</a><a href="12MAH.html">⭐ طالعنامه</a><a href="Tars.html">🕊️ دفع ترس و غم</a><a href="HASAD.html">🧿 دفع چشم زخم (حسد)</a><a href="SEHR.html">🛡️ دفع سحر</a><a href="JINN.html">🕯️ دفع جن</a><a href="DARD.html">🩹 دفع دردها</a><a href="ROQAYYA.html">📖 رقیه شرعیه</a><a href="REZQ.html">🌾 جلب رزق</a><a href="AWLAD.html">👶 طلب فرزند</a><a href="TAWIZAT/index.html">📜 تعویذات اسلامی</a><a href="TEBB/index.html">🌿 طب اسلامی</a></div></nav>
+<footer>© 2026 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</footer>
+<script src="app.js" defer></script>
+<script>
+// CORE-START
+// ابجد فلکی
+const FAL={};
+[['ایقغ',1],['بکر',2],['جلش',3],['دمت',4],['هنث',5],['وسخ',6],['زعذ',7],['حفض',8],['طصظ',9]]
+ .forEach(([s,n])=>[...s].forEach(c=>FAL[c]=n));
+// حروف فارسی که در ابجد فلکی نیستند به حرف هم‌صدای خود برمی‌گردند
+const ALIAS={'پ':'ب','چ':'ج','ژ':'ز','گ':'ک','ء':'ا'};
+const base=c=>ALIAS[c]||c;
+const fal=c=>FAL[base(c)];
+// دایرهٔ مستحصلهٔ ناد علی (۲۸ حرف)
+const CIRCLE=[...'نادعلیمظهرجبتوفکغسصحقشضطثزخذ'];
+// ابجد کبیر (به ترتیب مقدار)
+const ORDER=[['ا',1],['ب',2],['ج',3],['د',4],['ه',5],['و',6],['ز',7],['ح',8],['ط',9],['ی',10],['ک',20],['ل',30],['م',40],['ن',50],['س',60],['ع',70],['ف',80],['ص',90],['ق',100],['ر',200],['ش',300],['ت',400],['ث',500],['خ',600],['ذ',700],['ض',800],['ظ',900],['غ',1000]];
+const KNOWN=new Set([...ORDER.map(x=>x[0]),'پ','چ','ژ','گ','ء']);
+
+// یکدست‌سازی حروف و حذف هرچه حرف نیست
+function normalize(t){
+ const map={'ي':'ی','ى':'ی','ك':'ک','ة':'ه','ۀ':'ه','آ':'ا','أ':'ا','إ':'ا','ٱ':'ا','ؤ':'و','ئ':'ی'};
+ t=t.replace(/[\u064B-\u065F\u0670\u0640]/g,'');
+ let r=[];
+ for(const c of t){const m=map[c]||c;if(KNOWN.has(m))r.push(m)}
+ return r;
+}
+const dedupe=a=>{const s=new Set();return a.filter(c=>s.has(c)?false:(s.add(c),true))};
+// صدر و مؤخر: یک حرف از آخر، یک حرف از اول، به‌نوبت
+function sadr(a){
+ let l=0,r=a.length-1;const o=[];
+ while(l<=r){o.push(a[r--]);if(l<=r)o.push(a[l++])}
+ return o;
+}
+// ناد علی: از خود حرف شروع می‌کنیم و آن را «۱» می‌شماریم
+function nadAli(letter,n){
+ const i=CIRCLE.indexOf(base(letter));
+ return CIRCLE[(i+n-1)%CIRCLE.length];
+}
+// نصف: اگر نصف مقدار حرف حرفی در ابجد کبیر دارد همان؛ وگرنه حرف قبلی و نصف آن
+function half(c){
+ let i=ORDER.findIndex(x=>x[0]===c);
+ while(i>=0){
+  const v=ORDER[i][1];
+  if(v%2===0){const j=ORDER.findIndex(x=>x[1]===v/2);if(j>=0)return ORDER[j][0]}
+  i--;
+ }
+ return c; // فقط برای «ا» که حرف قبلی ندارد
+}
+// امتزاج: یک حرف از نیمهٔ راست و یک حرف از نیمهٔ چپ، به‌نوبت
+function emtizaj(a){
+ const n=a.length,h=Math.floor(n/2);
+ const R=a.slice(0,h),L=a.slice(n-h),o=[];
+ for(let i=0;i<h;i++){o.push(R[i]);o.push(L[i])}
+ return o;
+}
+function build(input){
+ const rows=[];const add=(title,cells,type,extra)=>rows.push(Object.assign({title,cells,type:type||'l'},extra||{}));
+ const r1=dedupe(input);
+ add('حذف مکررات',r1);
+ const r2=r1.map(fal);add('ابجد فلکی سطر ۱',r2,'n');
+ const r3=sadr(r1);add('صدر و مؤخر سطر ۱',r3);
+ const r4=r3.map(fal);add('ابجد فلکی سطر ۳',r4,'n');
+ const r5=sadr(r3);add('صدر و مؤخر سطر ۳',r5);
+ const r6=r5.map(fal);add('ابجد فلکی سطر ۵',r6,'n');
+ const r7=r2.map((v,i)=>v+r4[i]+r6[i]);add('جمع عمودی سطرهای ۲، ۴ و ۶',r7,'n');
+ const r8=r5.map((c,i)=>nadAli(c,r7[i]));add('مستحصلهٔ ناد علی',r8);
+ const r9=sadr(r8);add('صدر و مؤخر سطر ۸',r9);
+ const r10=r9.map(half);add('نصف سطر ۹',r10);
+ const r11=r10.map(half);
+ const n=r11.length,ex={};
+ if(n%2)ex.cut=(n-1)/2;else if(n>=2)ex.split=n/2-1;
+ add('نصف سطر ۱۰',r11,'l',ex);
+ const r12=emtizaj(r11);
+ if(!r12.length)return {rows,note:'تعداد حروف برای امتزاج کافی نبود؛ متن بلندتری وارد کنید.'};
+ add('امتزاج سطر ۱۱',r12);
+ const r13=dedupe(r12);add('حذف مکررات سطر ۱۲',r13);
+ const r14=sadr(r13);add('صدر و مؤخر سطر ۱۳',r14);
+ const r15=sadr(r14);add('صدر و مؤخر سطر ۱۴',r15);
+ const r16=r15.map(half);add('نصف سطر ۱۵',r16);
+ return {rows};
+}
+// CORE-END
+
+const $=i=>document.getElementById(i);
+const fa=n=>n.toLocaleString('fa-IR');
+function render(res){
+ const t=document.createElement('table');
+ res.rows.forEach((row,i)=>{
+  const tr=t.insertRow();
+  if(row.type==='n')tr.className='mark';
+  const th=document.createElement('th');th.scope='row';
+  const s=document.createElement('span');s.className='rn';s.textContent=fa(i+1);
+  th.append(s,row.title);tr.appendChild(th);
+  row.cells.forEach((c,j)=>{
+   const td=tr.insertCell();td.textContent=c;
+   if(row.type==='n')td.className='num';
+   if(row.cut===j)td.className='cut';
+   if(row.split===j)td.className='split';
+  });
+ });
+ $('tbl').replaceChildren(t);
+ const m=$('msg');
+ if(res.note){m.textContent=res.note;m.hidden=false}else m.hidden=true;
+}
+$('gen').addEventListener('click',()=>{
+ const letters=normalize($('q').value);
+ if(!letters.length){$('tbl').replaceChildren();const m=$('msg');m.textContent='حرف فارسی یا عربی وارد کنید.';m.hidden=false;return}
+ render(build(letters));
+});
+</script>
+</body>
+</html>
