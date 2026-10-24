@@ -6,6 +6,9 @@
 <title>جفر ناد علی | راقیون</title>
 <meta name="description" content="جفر ناد علی: جدول ۱۶ سطری با ابجد فلکی، مستحصلهٔ ناد علی، نصف‌کردن و امتزاج حروف">
 <meta name="theme-color" content="#2a5d9f">
+<!-- ★ نسخه: برای انتشار نسخهٔ جدید فقط همین عدد را عوض کنید ★ -->
+<meta name="app-version" content="1.8.0">
+<meta http-equiv="Cache-Control" content="no-cache">
 <link rel="canonical" href="https://raqiyoun.github.io/Pages/JAFRNADALI">
 <meta property="og:type" content="article"><meta property="og:locale" content="fa_IR">
 <meta property="og:title" content="جفر ناد علی | راقیون"><meta property="og:description" content="جفر ناد علی: جدول ۱۶ سطری با ابجد فلکی، مستحصلهٔ ناد علی، نصف‌کردن و امتزاج حروف"><meta property="og:url" content="https://raqiyoun.github.io/Pages/JAFRNADALI">
@@ -13,21 +16,39 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="style.css">
+<script>
+/* style.css و app.js با شمارهٔ نسخهٔ بالا بارگذاری می‌شوند؛ با عوض‌شدن نسخه، مرورگر مجبور به دریافت دوبارهٔ آن‌ها می‌شود */
+(function(){var m=document.querySelector('meta[name="app-version"]'),v=m?m.content:'0';window.APP_VERSION=v;
+document.write('<link rel="stylesheet" href="style.css?v='+v+'">');
+document.write('<script src="app.js?v='+v+'" defer><\/script>');})();
+</script>
+<noscript><link rel="stylesheet" href="style.css"></noscript>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap"></noscript>
 <style>
-.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:12px}
-.tablewrap table{border-collapse:collapse;margin:0 auto;min-width:max-content}
-.tablewrap th,.tablewrap td{border:1px solid rgba(128,128,128,.4);padding:4px 9px;text-align:center;min-width:2em}
-.tablewrap th{font-size:.75em;font-weight:700;white-space:nowrap;text-align:right;background:rgba(128,128,128,.1)}
-.tablewrap td.num{font-variant-numeric:tabular-nums;opacity:.85}
-.tablewrap td.cut{text-decoration:line-through;opacity:.5}
-.tablewrap td.split{border-left:3px solid currentColor}
-.tablewrap tr.mark th,.tablewrap tr.mark td{background:rgba(42,93,159,.08)}
-.tablewrap .rn{opacity:.6;margin-inline-end:.4em}
-.msg{margin-top:10px;font-size:.9em}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.page,.panel{min-width:0}
+textarea.field{width:100%;box-sizing:border-box;font-size:16px;max-width:100%}
+.tablewrap{margin-top:12px;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chunk{margin:0 auto 18px;max-width:calc(var(--k,8) * 56px);container-type:inline-size}
+.chunk-h{font-size:.8rem;opacity:.75;margin:0 0 5px;text-align:right}
+.tablewrap table{border-collapse:collapse;table-layout:fixed;width:100%;direction:rtl}
+.tablewrap td{border:1px solid rgba(128,128,128,.5);text-align:center;padding:0;overflow:hidden}
+.tablewrap tr.tt td{border-bottom:0;text-align:right;padding:4px 8px;font-size:clamp(11px,3.3vw,13px);line-height:1.5;font-weight:700;background:rgba(128,128,128,.14)}
+.tablewrap tr.tt .rn{opacity:.6;margin-inline-end:.4em}
+/* اندازهٔ قلم بر اساس عرض واقعی هر خانه (خانه‌های کوچک ← قلم کوچک‌تر، بدون سرریز) */
+.tablewrap tr.cr td{padding:.38em 0;font-size:clamp(16px,4.6vw,20px);line-height:1.3}
+.tablewrap tr.cr td.num{font-size:clamp(14px,4vw,17px);opacity:.9;font-variant-numeric:tabular-nums}
+@supports (width:1cqw){
+ .tablewrap tr.cr td{font-size:clamp(14px,calc(100cqw / var(--k,8) * .52),22px)}
+ .tablewrap tr.cr td.num{font-size:clamp(12px,calc(100cqw / var(--k,8) * .42),18px)}
+}
+.tablewrap tr.cr td.cut{text-decoration:line-through;opacity:.5}
+.tablewrap tr.cr td.split{border-left:3px solid currentColor}
+.tablewrap tr.mark td{background:rgba(42,93,159,.09)}
+.tablewrap tr.tt.mark td{background:rgba(42,93,159,.16)}
+.msg{margin-top:10px;font-size:.9em;overflow-wrap:anywhere}
 .stx{margin:14px 0 6px;font-weight:700}
 .bismillah-box{position:relative;background:linear-gradient(160deg,#0f6e5f 0%,#0c5648 55%,#0a4a3e 100%);border-radius:16px;box-shadow:0 4px 18px #0f6e5f40;border:1px solid #cfa54a;padding:22px 20px 20px;margin:0 0 20px;text-align:center;overflow:hidden}
 .bismillah-box::before,.bismillah-box::after{content:'✦';position:absolute;top:10px;font-size:12px;color:#d8b46a;opacity:.85}
@@ -38,6 +59,19 @@
 .bismillah-box .ayah-line::before{content:'﴿ ';color:#d8b46a}
 .bismillah-box .ayah-line::after{content:' ﴾';color:#d8b46a}
 .bismillah-box .ayah-line.plain::before,.bismillah-box .ayah-line.plain::after{content:none}
+@media (max-width:480px){
+ .bismillah-box{padding:18px 12px 16px}
+ .bismillah-box .bism-line{font-size:18px}
+ .bismillah-box .ayah-line{font-size:17px;line-height:2.1}
+ #gen{width:100%}
+}
+</style>
+<style id="updates-css">
+/* ===== UPDATES-CSS =====
+   کدهای CSS جدید هر نسخه را همین‌جا (زیر هم) اضافه کنید تا بدون دست‌زدن به style.css اعمال شود.
+   تاریخچهٔ تغییرات:
+   1.1.0 — ریسپانسیو کامل جدول در گوشی؛ نسخه‌بندی یک‌نقطه‌ای
+*/
 </style>
 </head>
 <body>
@@ -77,8 +111,7 @@
 </div>
 </main>
 <nav class="more" aria-label="صفحات دیگر"><h2>صفحات دیگر</h2><div class="chips"><a href="JAFRTAKSIRI.html">🧩 جفر تکسیری</a><a href="HAYATMAMAT.html">⚖️ لوح حیات و ممات</a><a href="ABJAD.html">🔢 محاسبه ابجد</a><a href="12MAH.html">⭐ طالعنامه</a><a href="Tars.html">🕊️ دفع ترس و غم</a><a href="HASAD.html">🧿 دفع چشم زخم (حسد)</a><a href="SEHR.html">🛡️ دفع سحر</a><a href="JINN.html">🕯️ دفع جن</a><a href="DARD.html">🩹 دفع دردها</a><a href="ROQAYYA.html">📖 رقیه شرعیه</a><a href="REZQ.html">🌾 جلب رزق</a><a href="AWLAD.html">👶 طلب فرزند</a><a href="TAWIZAT/index.html">📜 تعویذات اسلامی</a><a href="TEBB/index.html">🌿 طب اسلامی</a></div></nav>
-<footer>© 2026 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.</footer>
-<script src="app.js" defer></script>
+<footer>© 2026 طراحی توسط RAQIYOUN. تمامی حقوق محفوظ است.<small id="ver" style="display:block;opacity:.7;font-size:.8em"></small></footer>
 <script>
 // CORE-START
 // ابجد فلکی
@@ -159,30 +192,104 @@ function build(input){
 
 const $=i=>document.getElementById(i);
 const fa=n=>n.toLocaleString('fa-IR');
+let lastRes=null,curK=0;
+// تعداد ستون در هر بخش: بر اساس عرض صفحه، با حداقل ~۳۲ پیکسل برای هر خانه
+function calcK(maxLen){
+ const w=$('tbl').clientWidth||Math.min(window.innerWidth,900)-32;
+ const fit=Math.max(5,Math.floor(w/34));
+ const parts=Math.ceil(maxLen/fit);
+ return Math.max(1,Math.ceil(maxLen/parts));
+}
+const maxLenOf=res=>Math.max(...res.rows.map(r=>r.cells.length));
 function render(res){
- const t=document.createElement('table');
- res.rows.forEach((row,i)=>{
-  const tr=t.insertRow();
-  if(row.type==='n')tr.className='mark';
-  const th=document.createElement('th');th.scope='row';
-  const s=document.createElement('span');s.className='rn';s.textContent=fa(i+1);
-  th.append(s,row.title);tr.appendChild(th);
-  row.cells.forEach((c,j)=>{
-   const td=tr.insertCell();td.textContent=c;
-   if(row.type==='n')td.className='num';
-   if(row.cut===j)td.className='cut';
-   if(row.split===j)td.className='split';
+ lastRes=res;
+ const maxLen=maxLenOf(res);
+ const K=curK=calcK(maxLen),parts=Math.ceil(maxLen/K);
+ const frag=document.createDocumentFragment();
+ for(let p=0;p<parts;p++){
+  const from=p*K,to=from+K;
+  const box=document.createElement('div');box.className='chunk';box.style.setProperty('--k',K);
+  if(parts>1){
+   const h=document.createElement('p');h.className='chunk-h';
+   h.textContent='بخش '+fa(p+1)+' از '+fa(parts)+' — ستون‌های '+fa(from+1)+' تا '+fa(Math.min(to,maxLen));
+   box.appendChild(h);
+  }
+  const t=document.createElement('table');
+  const cg=document.createElement('colgroup');
+  for(let i=0;i<K;i++)cg.appendChild(document.createElement('col'));
+  t.appendChild(cg);
+  res.rows.forEach((row,i)=>{
+   const slice=row.cells.slice(from,to);
+   if(!slice.length)return;
+   const mark=row.type==='n'?' mark':'';
+   const tt=t.insertRow();tt.className='tt'+mark;
+   const th=tt.insertCell();th.colSpan=K;
+   const s=document.createElement('span');s.className='rn';s.textContent=fa(i+1)+'.';
+   th.append(s,row.title);
+   const tr=t.insertRow();tr.className='cr'+mark;
+   slice.forEach((c,j)=>{
+    const td=tr.insertCell();td.textContent=c;
+    const idx=from+j,cl=[];
+    if(row.type==='n')cl.push('num');
+    if(row.cut===idx)cl.push('cut');
+    if(row.split===idx)cl.push('split');
+    if(cl.length)td.className=cl.join(' ');
+   });
   });
- });
- $('tbl').replaceChildren(t);
+  box.appendChild(t);frag.appendChild(box);
+ }
+ $('tbl').replaceChildren(frag);
  const m=$('msg');
  if(res.note){m.textContent=res.note;m.hidden=false}else m.hidden=true;
 }
+// با چرخش گوشی یا تغییر اندازهٔ پنجره، تقسیم ستون‌ها دوباره محاسبه شود
+let rt;
+['resize','orientationchange'].forEach(ev=>window.addEventListener(ev,()=>{
+ clearTimeout(rt);
+ rt=setTimeout(()=>{if(lastRes&&calcK(maxLenOf(lastRes))!==curK)render(lastRes)},150);
+}));
 $('gen').addEventListener('click',()=>{
  const letters=normalize($('q').value);
- if(!letters.length){$('tbl').replaceChildren();const m=$('msg');m.textContent='حرف فارسی یا عربی وارد کنید.';m.hidden=false;return}
+ if(!letters.length){lastRes=null;$('tbl').replaceChildren();const m=$('msg');m.textContent='حرف فارسی یا عربی وارد کنید.';m.hidden=false;return}
  render(build(letters));
 });
+</script>
+<script id="updates-js">
+/* ===== UPDATES-JS =====
+   کدهای جاوااسکریپت جدید هر نسخه را همین‌جا اضافه کنید.
+   (متغیرها و توابع اسکریپت اصلی بالا مثل render و build از اینجا هم در دسترس‌اند.)
+   1.1.0 — ریسپانسیو جدول + نسخه‌بندی
+*/
+</script>
+<script>
+/* ===== VERSION-CHECK =====
+   برای انتشار نسخهٔ جدید فقط عدد داخل <meta name="app-version"> را عوض کنید.
+   - style.css و app.js با ?v=نسخه دوباره دریافت می‌شوند.
+   - اگر کاربر صفحهٔ قدیمی را باز گذاشته باشد، در بررسی بعدی (بازگشت به صفحه / هر ۶۰ ثانیه) کش پاک و صفحه خودکار تازه می‌شود. */
+(function(){
+ const cur=window.APP_VERSION||'';
+ const el=document.getElementById('ver');
+ if(el&&cur)el.textContent='نسخه '+cur.replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+ if(!cur||!window.fetch)return;
+ const KEY='jafrnadali-reloaded',gap=60000;let last=0;
+ async function check(){
+  if(Date.now()-last<gap)return;last=Date.now();
+  try{
+   const r=await fetch(location.pathname+'?_chk='+Date.now(),{cache:'no-store'});
+   if(!r.ok)return;
+   const m=(await r.text()).match(/<meta\s+name="app-version"\s+content="([^"]+)"/);
+   if(!m||m[1]===cur)return;
+   const nv=m[1];
+   try{if(sessionStorage.getItem(KEY)===nv)return;sessionStorage.setItem(KEY,nv)}catch(e){}
+   if(window.caches){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)))}
+   if(navigator.serviceWorker){const rg=await navigator.serviceWorker.getRegistrations();await Promise.all(rg.map(x=>x.update()))}
+   const u=new URL(location.href);u.searchParams.set('v',nv);location.replace(u.toString());
+  }catch(e){}
+ }
+ check();
+ document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check()});
+ window.addEventListener('pageshow',e=>{if(e.persisted){last=0;check()}});
+})();
 </script>
 </body>
 </html>
